@@ -1,0 +1,39 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "name": "Cardiovascular",
+      "image": "./public/images/cardiovascular.jpg",
+      "items": 11,
+      "slug": "cardiovascular"
+    },
+    {
+      "id": "2",
+      "name": "Strength Training",
+      "image": "./public/images/strength.jpg",
+      "items": 8,
+      "slug": "strength"
+    },
+    {
+      "id": "3",
+      "name": "Functional Training",
+      "image": "./public/images/functional.jpg",
+      "items": 4,
+      "slug": "functional"
+    },
+    {
+      "id": "4",
+      "name": "Flexibility & Mobility",
+      "image": "./public/images/flexibility-mobility.jpg",
+      "items": 5,
+      "slug": "flexibility-mobility"
+    },
+    {
+      "id": "5",
+      "name": "Resistance Training",
+      "image": "./public/images/resistance.jpg",
+      "items": 6,
+      "slug": "resistance"
+    }
+  ]
+}

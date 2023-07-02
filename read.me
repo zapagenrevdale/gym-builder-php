@@ -1,1 +1,83 @@
 npx tailwindcss -i ./public/css/input.css -o ./public/css/global.css --watch
+
+-- Users Entity
+CREATE TABLE Users (
+  user_id INT PRIMARY KEY AUTO_INCREMENT,
+  first_name VARCHAR(255) NOT NULL,
+  last_name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  admin TINYINT(1) NOT NULL DEFAULT 0
+);
+
+-- Addresses Entity
+CREATE TABLE Addresses (
+  address_id INT PRIMARY KEY AUTO_INCREMENT,
+  user_id INT,
+  address_line1 VARCHAR(255) NOT NULL,
+  address_line2 VARCHAR(255),
+  city VARCHAR(255) NOT NULL,
+  country VARCHAR(255) NOT NULL,
+  postal_code VARCHAR(255) NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES Users(user_id)
+);
+
+-- Products Entity
+CREATE TABLE Products (
+  product_id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  description TEXT,
+  price DECIMAL(10, 2) NOT NULL,
+  image_link VARCHAR(255)
+);
+
+-- Orders Entity
+CREATE TABLE Orders (
+  order_id INT PRIMARY KEY AUTO_INCREMENT,
+  user_id INT,
+  address_id INT,
+  order_date DATE NOT NULL,
+  total_amount DECIMAL(10, 2) NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES Users(user_id),
+  FOREIGN KEY (address_id) REFERENCES Addresses(address_id)
+);
+
+-- OrderItems Entity
+CREATE TABLE OrderItems (
+  order_item_id INT PRIMARY KEY AUTO_INCREMENT,
+  order_id INT,
+  product_id INT,
+  quantity INT NOT NULL,
+  price DECIMAL(10, 2) NOT NULL,
+  FOREIGN KEY (order_id) REFERENCES Orders(order_id),
+  FOREIGN KEY (product_id) REFERENCES Products(product_id)
+);
+
+-- Payments Entity
+CREATE TABLE Payments (
+  payment_id INT PRIMARY KEY AUTO_INCREMENT,
+  order_id INT,
+  payment_method VARCHAR(255) NOT NULL,
+  transaction_id VARCHAR(255) NOT NULL,
+  amount DECIMAL(10, 2) NOT NULL,
+  payment_date DATETIME NOT NULL,
+  FOREIGN KEY (order_id) REFERENCES Orders(order_id)
+);
+
+-- Tutorials Entity
+CREATE TABLE Tutorials (
+  tutorial_id INT PRIMARY KEY AUTO_INCREMENT,
+  product_id INT,
+  title VARCHAR(255) NOT NULL,
+  content TEXT,
+  video_link VARCHAR(255),
+  FOREIGN KEY (product_id) REFERENCES Products(product_id)
+);
+
+-- Inventory Entity
+CREATE TABLE Inventory (
+  inventory_id INT PRIMARY KEY AUTO_INCREMENT,
+  product_id INT,
+  quantity INT NOT NULL DEFAULT 0,
+  FOREIGN KEY (product_id) REFERENCES Products(product_id)
+);

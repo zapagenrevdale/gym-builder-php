@@ -10,6 +10,7 @@ h2 {
   @apply text-4xl md:text-5xl;
 }
 
+
 @font-face {
   font-family: "Montserrat";
   src: url("../fonts/montserrat/Montserrat-Thin.ttf") format("truetype");
@@ -241,9 +242,11 @@ h2 {
   }
 
   .primary-button-black {
-    @apply bg-neutral-800  text-white  border border-neutral-800 hover:hover-button-black;
+    @apply bg-neutral-800  text-white  border border-neutral-800;
   }
   .primary-button-white {
-    @apply bg-white  text-neutral-800 hover:hover-button-white;
+    @apply bg-white  text-neutral-800;
   }
+
+
 }

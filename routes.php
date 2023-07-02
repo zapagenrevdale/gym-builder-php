@@ -5,7 +5,7 @@
         '/register/' => 'controllers/register.php',
 
         // admin
-        '/admin/products/' => 'controllers/admin.php',
+        '/admin/products' => 'controllers/admin.php',
 
     ];
 ?>

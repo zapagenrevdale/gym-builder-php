@@ -1,4 +1,4 @@
-<div class="w-full xl:min-w-[350px] flex flex-col border-r ">
+<div class="w-full xl:min-w-[350px] max-w-[350px] flex flex-col border-r ">
     <div class="w-full h-16 bg-neutral-800 flex items-center text-white pl-6">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
             class="w-8 h-8">
@@ -11,7 +11,8 @@
     </div>
 
     <div class="flex flex-col p-8 gap-5 text-sm font-medium">
-        <button class="w-full flex items-center px-6 py-4 rounded-md gap-4 primary-button primary-button-white border">
+        <button class="w-full flex items-center px-6 py-4 rounded-md gap-4 primary-button primary-button-white border"
+            onclick='window.location.href="/admin/dashboard"'>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -20,7 +21,8 @@
 
             Dashboard
         </button>
-        <button class="w-full flex items-center px-6 py-4 rounded-md gap-4 primary-button primary-button-white border">
+        <button class="w-full flex items-center px-6 py-4 rounded-md gap-4 primary-button primary-button-white border"
+            onclick='window.location.href="/admin/products"'>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -28,7 +30,8 @@
             </svg>
             Products
         </button>
-        <button class="w-full flex items-center px-6 py-4 rounded-md gap-4 primary-button primary-button-white border">
+        <button class="w-full flex items-center px-6 py-4 rounded-md gap-4 primary-button primary-button-white border"
+            onclick='window.location.href="/admin/tutorials"'>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -37,7 +40,8 @@
 
             Tutorials
         </button>
-        <button class="w-full flex items-center px-6 py-4 rounded-md gap-4 primary-button primary-button-white border">
+        <button class="w-full flex items-center px-6 py-4 rounded-md gap-4 primary-button primary-button-white border"
+            onclick='window.location.href="/admin/orders"'>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -46,7 +50,8 @@
 
             Orders
         </button>
-        <button class="w-full flex items-center px-6 py-4 rounded-md gap-4 primary-button primary-button-white border">
+        <button class="w-full flex items-center px-6 py-4 rounded-md gap-4 primary-button primary-button-white border"
+            onclick='window.location.href="/admin/users"'>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round"

@@ -1,7 +1,7 @@
 <?php
     $title = "Register | Gym Builder Equipments";
 
-
-
-    require "views/register.view.php";
+    view("register.view.php",[
+        'title' => $title,
+    ]);
 ?>

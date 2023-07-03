@@ -1,8 +1,11 @@
-<?php require "views/partials/head.php" ?>
-<?php require "views/partials/header.php" ?>
+<?php 
+    view("partials/head.php", [
+        'title' => $title,
+    ]);
+    view("partials/header.php");
+?>
 
 <div class="container flex flex-col justify-center max-w-[600px] gap-8 w-full py-20">
-
     <div class="flex flex-col items-center gap-6 justify-center">
         <h1 class="text-5xl font-semibold text-center">Login</h1>
         <div class="flex items-center gap-2 justify-center mb-4">
@@ -47,4 +50,4 @@
     </button>
 </div>
 
-<?php require "views/partials/footer.php" ?>
+<?php view("partials/footer.php"); ?>

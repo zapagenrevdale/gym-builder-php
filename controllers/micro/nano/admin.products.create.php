@@ -52,5 +52,4 @@
         header("Location: /admin/products");
         exit;
     }
-
 ?>

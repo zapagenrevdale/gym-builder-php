@@ -1,4 +1,4 @@
-<?php require 'views/components/home/subcomponent/tutorialCard.php' ?>
+<?php view("components/home/subcomponent/tutorialCard.php"); ?>
 
 <div class="container flex flex-col items-center font-medium mt-20">
     <h4 class="uppercase underline underline-offset-8 mb-4 text-sm">
@@ -9,35 +9,35 @@
         <?php
         $tutorial = [
             "title" => "Dumbbell Workout Guide: Essential Exercises for Building Strength and Muscle",
-            "image" => "./public/images/cat1.webp",
+            "image" => "images/cat1.webp",
             "date" => "January 26, 2023",
         ];
         renderTutorialCard($tutorial);
 
         $tutorial = [
             "title" => "Kettlebell Training Tutorial: Mastering Form and Technique for Full-Body Workouts",
-            "image" => "./public/images/cat1.webp",
+            "image" => "images/cat1.webp",
             "date" => "January 26, 2023",
         ];
         renderTutorialCard($tutorial);
 
         $tutorial = [
             "title" => "Dumbbell Workout Guide: Essential Exercises for Building Strength and Muscle",
-            "image" => "./public/images/cat1.webp",
+            "image" => "images/cat1.webp",
             "date" => "January 26, 2023",
         ];
         renderTutorialCard($tutorial);
 
         $tutorial = [
             "title" => "Kettlebell Training Tutorial: Mastering Form and Technique for Full-Body Workouts",
-            "image" => "./public/images/cat1.webp",
+            "image" => "images/cat1.webp",
             "date" => "January 26, 2023",
         ];
         renderTutorialCard($tutorial);
 
         $tutorial = [
             "title" => "Dumbbell Workout Guide: Essential Exercises for Building Strength and Muscle",
-            "image" => "./public/images/cat1.webp",
+            "image" => "images/cat1.webp",
             "date" => "January 26, 2023",
         ];
 

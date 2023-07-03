@@ -7,8 +7,3 @@ if (createProduct) {
     productModal.classList.remove("hidden");
   };
 }
-
-function redirectToEdit(id){
-  window.location.href = "/admin/products?edit=" + id;
-}
-

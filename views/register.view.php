@@ -1,5 +1,9 @@
-<?php require "views/partials/head.php" ?>
-<?php require "views/partials/header.php" ?>
+<?php 
+    view("partials/head.php", [
+        'title' => $title,
+    ]);
+    view("partials/header.php");
+?>
 
 <form method="POST" action="" class="container flex flex-col justify-center max-w-[600px] gap-8 w-full py-16">
 
@@ -64,4 +68,4 @@
     </button>
 </form>
 
-<?php require "views/partials/footer.php" ?>
+<?php view("partials/footer.php"); ?>

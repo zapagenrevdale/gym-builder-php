@@ -2,7 +2,6 @@
     view("partials/head.php", [
         'title' => $title,
     ]);
-
     view("partials/header.php");
 ?>
 

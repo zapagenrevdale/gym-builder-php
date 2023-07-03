@@ -6,7 +6,7 @@ class Authenticated
 {
     public function handle()
     {
-        if (! $_SESSION['user'] ?? false) {
+        if (!isset($_SESSION['user']) && !isset($_SESSION['admin']) ) {
             header('location: /');
             exit();
         }

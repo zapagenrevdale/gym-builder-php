@@ -12,9 +12,9 @@
                 <a class="font-medium text-lg font-grotesk hover:underline cursor-pointer"> Contact </a>
             </nav>
             <div class="flex gap-4">
-                <button id="admin-logout" class="font-grotesk font-semibold">
+                <a href="/logout" id="admin-logout" class="font-grotesk font-semibold">
                     LOGOUT
-                </button>
+                </a>
             </div>
         </div>
     </div>

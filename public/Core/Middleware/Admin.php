@@ -7,7 +7,7 @@ class Admin
     public function handle()
     {
         if (!isset($_SESSION['admin'])) {
-            abort();
+            abort(403);
         }
     }
 }

@@ -747,6 +747,14 @@ video {
   margin-top: 1rem;
 }
 
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -896,6 +904,22 @@ video {
 
 .h-full {
   height: 100%;
+}
+
+.h-24 {
+  height: 6rem;
+}
+
+.h-0 {
+  height: 0px;
+}
+
+.h-12 {
+  height: 3rem;
+}
+
+.h-screen {
+  height: 100vh;
 }
 
 .max-h-\[380px\] {
@@ -2403,6 +2427,11 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
 }
 
 .font-black {

@@ -8,7 +8,6 @@ if (userButton) {
 var cartButton = document.getElementById("cart-icon");
 if (cartButton) {
   cartButton.onclick = function () {
-    window.location.href = "/register";
   };
 }
 

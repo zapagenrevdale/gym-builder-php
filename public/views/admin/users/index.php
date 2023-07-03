@@ -34,10 +34,10 @@
                             <th class="w-28 text-left px-4">Action</th>
                         </tr>
                     </thead>
-                    <tbody class="border text-light h-20">
+                    <tbody class="border text-light ">
                         <?php 
                             foreach($users as $user){
-                            echo '<tr class="border">
+                            echo '<tr class="border h-12">
                                         <td class="px-2 border-l">' . $user["user_id"] . '</td>
                                         <td class="px-2 border-l">' . $user["first_name"] .'</td>
                                         <td class="px-2 border-l">' . $user["last_name"] .'</td>

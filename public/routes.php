@@ -48,5 +48,8 @@
     $router->get('/admin/users/create', 'controllers/admin/users/create.php')->only("admin");;
     $router->get('/admin/users/edit', 'controllers/admin/users/edit.php')->only("admin");;
 
+    //routes for session
+    $router->get('/logout', 'controllers/session/destroy.php')->only("auth");
+
 
 ?>

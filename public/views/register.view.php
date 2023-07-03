@@ -59,10 +59,10 @@
         </div>
     </div>
 
-    <button
+    <a href="/login"
         class="primary-button hover:hover-button-white primary-button-white flex items-center justify-center rounded-md font-grotesk border-2 border-neutral-800 ">
         <h6 class="font-semibold">Sign in</h6>
-    </button>
+    </a>
 </form>
 
 <?php view("partials/footer.php"); ?>

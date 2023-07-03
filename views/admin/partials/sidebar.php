@@ -1,4 +1,4 @@
-<div class="w-full xl:min-w-[350px] max-w-[350px] flex flex-col border-r ">
+<div class="w-full xl:min-w-[350px] xl:max-w-[350px] flex flex-col border-r ">
     <div class="w-full h-16 bg-neutral-800 flex items-center text-white pl-6">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
             class="w-8 h-8">

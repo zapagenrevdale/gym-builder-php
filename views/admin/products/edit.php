@@ -22,28 +22,26 @@
                     <form class="grid grid-cols-12 gap-4" action="/admin/products" method="POST"
                         enctype="multipart/form-data">
                         <input type="text" name="_method" hidden value="patch" />
-                        <input type="text" id="image_link" name="image_link" hidden
-                            value="<?= $edit_product["image_link"] ?>" />
                         <input type="text" id="product_id" name="product_id" hidden
                             value="<?= $edit_product["product_id"] ?>" />
 
                         <div class="flex flex-col w-full gap-2 text-sm col-span-7">
                             <label for="name" class="font-medium">Name</label>
-                            <input type="text" id="name" name="name"
+                            <input required type="text" id="name" name="name"
                                 class="h-10 border rounded-md focus:border px-4 w-full"
                                 value="<?= $edit_product["name"]  ?>" />
                             <?= isset($errors["name"]) ? '<p class="text-red-700 text-sm">'. $errors["name"] .'</p>' : '' ?>
                         </div>
                         <div class="flex flex-col w-full gap-2 text-sm col-start-9 col-end-13">
                             <label for="price" class="font-medium">Price</label>
-                            <input type="number" id="price" name="price" min="0" step="2"
+                            <input required type="number" id="price" name="price" min="0" step="2"
                                 class="h-10 border rounded-md focus:border px-4 w-full"
                                 value="<?= $edit_product["price"]  ?>" />
                             <?= isset($errors["price"]) ? '<p class="text-red-700 text-sm">'. $errors["price"] .'</p>' : '' ?>
                         </div>
                         <div class="flex flex-col w-full gap-2 text-sm col-span-12">
                             <label for="description" class="font-medium">Description</label>
-                            <textarea id="description" name="description" rows="10" cols="30" maxlength="1000"
+                            <textarea required id="description" name="description" rows="10" cols="30" maxlength="1000"
                                 placeholder="Enter product description here..."
                                 class="p-4 border rounded-md focus:border w-full"><?= $edit_product["description"]  ?></textarea>
                             <?= isset($errors["description"]) ? '<p class="text-red-700 text-sm">'. $errors["description"] .'</p>' : '' ?>

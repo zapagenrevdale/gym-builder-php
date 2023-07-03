@@ -18,7 +18,7 @@
 
             <form action="/admin/products/create" method="GET" class="flex justify-end px-16 py-8">
                 <input
-                    class="primary-button primary-button-black  hover:hover-button-black rounded-xl px-16 font-semibold"
+                    class="primary-button primary-button-black  hover:hover-button-black rounded-xl px-16 font-semibold cursor-pointer"
                     value="Create" type="submit" />
 
             </form>
@@ -35,7 +35,7 @@
                             <th class="w-24 text-left px-4">Action</th>
                         </tr>
                     </thead>
-                    <tbody class="border font-grotesk text-light">
+                    <tbody class="border text-light">
                         <?php 
                             foreach($products as $product){
                             echo '<tr class="border">

@@ -15,22 +15,36 @@
             return filter_var($value, FILTER_VALIDATE_EMAIL);
         }
 
+        public static function validateFilePresence($value) {
+            return $value !== null && !empty($value["name"]) && !empty($value["full_path"]);
+        }
+
+        public static function validateFile($value, $allowedFormats) {
+            if(!self::validateFilePresence($value)){
+                return false;
+            }
+
+            $finfo = finfo_open(FILEINFO_MIME_TYPE);
+            $mimeType = finfo_file($finfo, $value['tmp_name']);
+            finfo_close($finfo);
+
+            return in_array($mimeType, $allowedFormats);
+        }
+
         public static function image($value){
-            if($value === null){
-                return false;
-            }
-            if(strlen($value["name"]) === 0 || strlen($value["full_path"]) === 0){
-                return false;
-            }
+            $allowedFormats = ['image/jpg', 'image/jpeg', 'image/png', 'image/gif'];
 
-            $imageInfo = getimagesize($_FILES['productImage']['tmp_name']);
-            $allowedFormats = ['jpg', 'jpeg', 'png', 'gif', "image/jpg", "image/jpeg", "image/png", "image/gif"];
+            return self::validateFile($value, $allowedFormats);
+        }
 
-            return $imageInfo && in_array($imageInfo['mime'], $allowedFormats);
+        public static function video($value){
+            $allowedFormats = ['video/mp4', 'video/mpeg', 'video/quicktime', 'video/x-msvideo', 'video/x-ms-wmv'];
+
+            return self::validateFile($value, $allowedFormats);
         }
 
         public static function price($value){
-            return is_numeric($_POST['price']) && floatval($_POST['price']) > 0;
+            return is_numeric($value) && floatval($value) > 0;
         }
     }
 ?>

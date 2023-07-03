@@ -7,6 +7,9 @@ return [
         'dbname' => 'gym_builder',
         'charset' => 'utf8mb4'
     ],
+    "user" => "root",
+    "password" => "",
 ];
+
 
 ?>

@@ -10,7 +10,7 @@ $db = App::resolve(Database::class);
 $errors = [];
 
 if (! Validator::string($_POST['title'], 1, 255)) {
-    $errors['name'] = 'Please enter a valid title (1 - 255 characters)';
+    $errors['title'] = 'Please enter a valid title (1 - 255 characters)';
 }
 
 if (! Validator::string($_POST['content'], 1, 1000)) {
@@ -26,7 +26,7 @@ if (! Validator::video($_FILES['tutorialVideo'])) {
 }
 
 if (! empty($errors)) {
-    return view("admin/tutorials/create.php", [
+    view("admin/tutorials/create.php", [
         'title' => $title,
         'errors' => $errors
     ]);

@@ -30,7 +30,7 @@
                         </div>
                         <div class="flex flex-col w-full gap-2 text-sm col-start-9 col-end-13">
                             <label for="price" class="font-medium">Price</label>
-                            <input required type="number" id="price" name="price" min="0" 
+                            <input required type="number" id="price" name="price" min="0"
                                 class="h-10 border rounded-md focus:border px-4 w-full"
                                 value="<?= $_POST['price'] ?? "" ?>" />
                             <?= isset($errors["price"]) ? '<p class="text-red-700 text-sm">'. $errors["price"] .'</p>' : '' ?>

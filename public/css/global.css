@@ -682,8 +682,16 @@ video {
   grid-column: span 7 / span 7;
 }
 
+.col-span-6 {
+  grid-column: span 6 / span 6;
+}
+
 .col-start-9 {
   grid-column-start: 9;
+}
+
+.col-start-8 {
+  grid-column-start: 8;
 }
 
 .col-end-13 {
@@ -970,8 +978,28 @@ video {
   width: 100%;
 }
 
+.w-44 {
+  width: 11rem;
+}
+
+.w-1 {
+  width: 0.25rem;
+}
+
+.w-2 {
+  width: 0.5rem;
+}
+
+.w-28 {
+  width: 7rem;
+}
+
 .min-w-full {
   min-width: 100%;
+}
+
+.min-w-\[200px\] {
+  min-width: 200px;
 }
 
 .max-w-7xl {

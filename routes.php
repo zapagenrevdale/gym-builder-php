@@ -32,5 +32,15 @@
     $router->get('/admin/tutorials/create', 'controllers/admin/tutorials/create.php');
     $router->get('/admin/tutorials/edit', 'controllers/admin/tutorials/edit.php');
 
+    // routes for USERS CRUD
+
+    $router->get('/admin/users', 'controllers/admin/users/index.php');
+    $router->post('/admin/users', 'controllers/admin/users/store.php');
+    $router->patch('/admin/users', 'controllers/admin/users/update.php');
+    $router->delete('/admin/users', 'controllers/admin/users/destroy.php');
+
+    $router->get('/admin/users/create', 'controllers/admin/users/create.php');
+    $router->get('/admin/users/edit', 'controllers/admin/users/edit.php');
+
 
 ?>

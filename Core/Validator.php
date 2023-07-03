@@ -46,5 +46,11 @@
         public static function price($value){
             return is_numeric($value) && floatval($value) > 0;
         }
+
+
+        public static function password($value){
+            $pattern = '/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/';
+            return preg_match($pattern, $value);
+        }
     }
 ?>

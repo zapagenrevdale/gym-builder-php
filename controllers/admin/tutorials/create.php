@@ -6,7 +6,7 @@
 
     $db = App::resolve(Database::class);
     $products = $db->query('select * from products')->get();
-    require view("admin/tutorials/create.php", [
+    view("admin/tutorials/create.php", [
         "title" => $title,
         "products" => $products,
     ]);

@@ -5,12 +5,12 @@
     view("partials/header.php");
 ?>
 
-<form method="POST" action="" class="container flex flex-col justify-center max-w-[600px] gap-8 w-full py-16">
+<form method="POST" action="/" class="container flex flex-col justify-center max-w-[600px] gap-8 w-full py-16">
 
     <div class="flex flex-col items-center gap-6 justify-center">
         <h1 class="text-5xl font-semibold text-center">Register</h1>
         <div class="flex items-center gap-2 justify-center mb-4">
-            <a href="">Home</a>
+            <a href="/">Home</a>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-4 h-4 text-neutral-800">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
@@ -20,35 +20,32 @@
         </div>
     </div>
 
-    <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+    <!-- <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>"> -->
     <div class="flex flex-col w-full gap-2">
-        <label for="firstName" class="font-medium">First Name</label>
-        <input required type="text" id="firstName" name="firstName"
-            class="h-14 border rounded-md focus:border px-4 w-full"
-            value=<?php echo isset($_SESSION['user']["firstName"])? $_SESSION['user']["firstName"]: "";  ?>>
+        <label for="first_name" class="font-medium">First Name</label>
+        <input  type="text" id="first_name" name="first_name"
+            class="h-14 border rounded-md focus:border px-4 w-full" value="<?= $_POST['first_name'] ?? "" ?>" />
+        <?= isset($errors["first_name"]) ? '<p class="text-red-700 text-sm">'. $errors["first_name"] .'</p>' : '' ?>
     </div>
 
     <div class="flex flex-col w-full gap-2">
-        <label for="lastName" class="font-medium">Last Name</label>
-        <input required type="text" id="lastName" name="lastName"
-            class="h-14 border rounded-md focus:border px-4 w-full"
-            value=<?php echo isset($_SESSION['user']["lastName"])? $_SESSION['user']["lastName"]: "";  ?>>
+        <label for="last_name" class="font-medium">Last Name</label>
+        <input  type="text" id="last_name" name="last_name"
+            class="h-14 border rounded-md focus:border px-4 w-full" value="<?= $_POST['last_name'] ?? "" ?>" />
+        <?= isset($errors["last_name"]) ? '<p class="text-red-700 text-sm">'. $errors["last_name"] .'</p>' : '' ?>
     </div>
 
     <div class="flex flex-col w-full gap-2">
         <label for="email" class="font-medium">Email</label>
-        <input required type="email" id="email" name="email" class="h-14 border rounded-md focus:border px-4 w-full"
-            value=<?php echo isset($_SESSION['user']["email"])? $_SESSION['user']["email"]: "";  ?>>
-        <?php
-        if( isset($_SESSION["error"]["email"]) ){
-            echo '<p class="text-red-700 text-sm">'. $_SESSION["error"]["email"] .'</p>';
-        }
-    ?>
+        <input  type="email" id="email" name="email" class="h-14 border rounded-md focus:border px-4 w-full"
+            value="<?= $_POST['email'] ?? "" ?>" />
+        <?= isset($errors["email"]) ? '<p class="text-red-700 text-sm">'. $errors["email"] .'</p>' : '' ?>
     </div>
     <div class="flex flex-col w-full">
         <label for="password" class="font-medium">Password</label>
-        <input required type="password" id="password" name="password"
+        <input  type="password" id="password" name="password"
             class="h-14 border rounded-md focus:border px-4 w-full">
+        <?= isset($errors["password"]) ? '<p class="text-red-700 text-sm">'. $errors["password"] .'</p>' : '' ?>
     </div>
 
     <input type="submit" value="Create Account"

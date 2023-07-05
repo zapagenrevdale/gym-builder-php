@@ -25,12 +25,17 @@ if (! Validator::video($_FILES['tutorialVideo'])) {
     $errors['tutorialVideo'] = 'Please provide a valid video.';
 }
 
+
+
 if (! empty($errors)) {
+    $products = $db->query('select * from products')->get();
     view("admin/tutorials/create.php", [
         'title' => $title,
-        'errors' => $errors
+        'errors' => $errors,
+        'products' => $products
     ]);
 }
+
 
 $uniqueName = uniqid() . '_' . $_FILES['tutorialVideo']['name'];
 $uploadFile = "images/uploads/" . $uniqueName;

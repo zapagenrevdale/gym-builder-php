@@ -36,9 +36,11 @@ if (! Validator::validateFilePresence($_FILES['tutorialVideo'])) {
 }
 
 if (! empty($errors)) {
+    $products = $db->query('select * from products')->get();
     return view("admin/tutorials/create.php", [
         'title' => $title,
-        'errors' => $errors
+        'errors' => $errors,
+        'products' => $products,
     ]);
 }
 

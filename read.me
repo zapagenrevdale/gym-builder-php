@@ -1,7 +1,7 @@
 npx tailwindcss -i ./public/css/input.css -o ./public/css/global.css --watch
 
--- Users Entity
-CREATE TABLE Users (
+-- users Entity
+CREATE TABLE users (
   user_id INT PRIMARY KEY AUTO_INCREMENT,
   first_name VARCHAR(255) NOT NULL,
   last_name VARCHAR(255) NOT NULL,
@@ -10,8 +10,8 @@ CREATE TABLE Users (
   admin TINYINT(1) NOT NULL DEFAULT 0
 );
 
--- Addresses Entity
-CREATE TABLE Addresses (
+-- addresses Entity
+CREATE TABLE addresses (
   address_id INT PRIMARY KEY AUTO_INCREMENT,
   user_id INT,
   address_line1 VARCHAR(255) NOT NULL,
@@ -19,11 +19,11 @@ CREATE TABLE Addresses (
   city VARCHAR(255) NOT NULL,
   country VARCHAR(255) NOT NULL,
   postal_code VARCHAR(255) NOT NULL,
-  FOREIGN KEY (user_id) REFERENCES Users(user_id)
+  FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
--- Products Entity
-CREATE TABLE Products (
+-- products Entity
+CREATE TABLE products (
   product_id INT PRIMARY KEY AUTO_INCREMENT,
   name VARCHAR(255) NOT NULL,
   description TEXT,
@@ -32,14 +32,14 @@ CREATE TABLE Products (
 );
 
 -- Orders Entity
-CREATE TABLE Orders (
+CREATE TABLE orders (
   order_id INT PRIMARY KEY AUTO_INCREMENT,
   user_id INT,
   address_id INT,
   order_date DATE NOT NULL,
   total_amount DECIMAL(10, 2) NOT NULL,
-  FOREIGN KEY (user_id) REFERENCES Users(user_id),
-  FOREIGN KEY (address_id) REFERENCES Addresses(address_id)
+  FOREIGN KEY (user_id) REFERENCES users(user_id),
+  FOREIGN KEY (address_id) REFERENCES addresses(address_id)
 );
 
 -- OrderItems Entity
@@ -49,8 +49,8 @@ CREATE TABLE OrderItems (
   product_id INT,
   quantity INT NOT NULL,
   price DECIMAL(10, 2) NOT NULL,
-  FOREIGN KEY (order_id) REFERENCES Orders(order_id),
-  FOREIGN KEY (product_id) REFERENCES Products(product_id)
+  FOREIGN KEY (order_id) REFERENCES orders(order_id),
+  FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 
 -- Payments Entity
@@ -61,7 +61,7 @@ CREATE TABLE Payments (
   transaction_id VARCHAR(255) NOT NULL,
   amount DECIMAL(10, 2) NOT NULL,
   payment_date DATETIME NOT NULL,
-  FOREIGN KEY (order_id) REFERENCES Orders(order_id)
+  FOREIGN KEY (order_id) REFERENCES orders(order_id)
 );
 
 -- Tutorials Entity
@@ -71,7 +71,7 @@ CREATE TABLE Tutorials (
   title VARCHAR(255) NOT NULL,
   content TEXT,
   video_link VARCHAR(255),
-  FOREIGN KEY (product_id) REFERENCES Products(product_id)
+  FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 
 -- Inventory Entity
@@ -79,5 +79,5 @@ CREATE TABLE Inventory (
   inventory_id INT PRIMARY KEY AUTO_INCREMENT,
   product_id INT,
   quantity INT NOT NULL DEFAULT 0,
-  FOREIGN KEY (product_id) REFERENCES Products(product_id)
+  FOREIGN KEY (product_id) REFERENCES products(product_id)
 );

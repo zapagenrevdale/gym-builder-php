@@ -42,8 +42,8 @@ CREATE TABLE orders (
   FOREIGN KEY (address_id) REFERENCES addresses(address_id)
 );
 
--- OrderItems Entity
-CREATE TABLE OrderItems (
+-- orderitems Entity
+CREATE TABLE orderitems (
   order_item_id INT PRIMARY KEY AUTO_INCREMENT,
   order_id INT,
   product_id INT,
@@ -53,8 +53,8 @@ CREATE TABLE OrderItems (
   FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 
--- Payments Entity
-CREATE TABLE Payments (
+-- payments Entity
+CREATE TABLE payments (
   payment_id INT PRIMARY KEY AUTO_INCREMENT,
   order_id INT,
   payment_method VARCHAR(255) NOT NULL,
@@ -64,8 +64,8 @@ CREATE TABLE Payments (
   FOREIGN KEY (order_id) REFERENCES orders(order_id)
 );
 
--- Tutorials Entity
-CREATE TABLE Tutorials (
+-- tutorials Entity
+CREATE TABLE tutorials (
   tutorial_id INT PRIMARY KEY AUTO_INCREMENT,
   product_id INT,
   title VARCHAR(255) NOT NULL,
@@ -74,8 +74,8 @@ CREATE TABLE Tutorials (
   FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 
--- Inventory Entity
-CREATE TABLE Inventory (
+-- inventory Entity
+CREATE TABLE inventory (
   inventory_id INT PRIMARY KEY AUTO_INCREMENT,
   product_id INT,
   quantity INT NOT NULL DEFAULT 0,

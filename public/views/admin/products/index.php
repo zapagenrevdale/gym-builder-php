@@ -31,6 +31,7 @@
                             <th class="w-32 text-left px-4">Name</th>
                             <th class="w-full text-left px-4">Description</th>
                             <th class="w-24 text-left px-4">Price</th>
+                            <th class="w-20 text-left px-4">Items</th>
                             <th class="w-24 text-left px-4">Image</th>
                             <th class="w-24 text-left px-4">Action</th>
                         </tr>
@@ -43,6 +44,7 @@
                                         <td class="px-2 border-l">' . $product["name"] .'</td>
                                         <td class="px-2 border-l">' . $product["description"] .'</td>
                                         <td class="px-2 border-l">' . $product["price"] .'</td>
+                                        <td class="px-2 border-l text-center">' . $product["item"] .'</td>
                                         <td class="px-2 border-l"><img src="' . $product["image_link"] .'"
                                                 alt="" class="w-20 h-20"></td>
                                         <td class="px-2 border-l text-sm text-center">

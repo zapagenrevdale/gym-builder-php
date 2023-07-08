@@ -25,19 +25,26 @@
                         <input type="text" id="product_id" name="product_id" hidden
                             value="<?= $edit_product["product_id"] ?>" />
 
-                        <div class="flex flex-col w-full gap-2 text-sm col-span-7">
+                        <div class="flex flex-col w-full gap-2 text-sm col-span-6">
                             <label for="name" class="font-medium">Name</label>
                             <input required type="text" id="name" name="name"
                                 class="h-10 border rounded-md focus:border px-4 w-full"
                                 value="<?= $edit_product["name"]  ?>" />
                             <?= isset($errors["name"]) ? '<p class="text-red-700 text-sm">'. $errors["name"] .'</p>' : '' ?>
                         </div>
-                        <div class="flex flex-col w-full gap-2 text-sm col-start-9 col-end-13">
+                        <div class="flex flex-col w-full gap-2 text-sm col-span-3">
                             <label for="price" class="font-medium">Price</label>
-                            <input required type="number" id="price" name="price" min="0" step="2"
+                            <input required type="number" id="price" name="price" min="0" step=".2"
                                 class="h-10 border rounded-md focus:border px-4 w-full"
                                 value="<?= $edit_product["price"]  ?>" />
                             <?= isset($errors["price"]) ? '<p class="text-red-700 text-sm">'. $errors["price"] .'</p>' : '' ?>
+                        </div>
+                        <div class="flex flex-col w-full gap-2 text-sm col-span-3">
+                            <label for="item" class="font-medium">Items</label>
+                            <input required type="number" id="item" name="item" min="0" step="1"
+                                class="h-10 border rounded-md focus:border px-4 w-full"
+                                value="<?= $edit_product["item"]  ?>" />
+                            <?= isset($errors["item"]) ? '<p class="text-red-700 text-sm">'. $errors["item"] .'</p>' : '' ?>
                         </div>
                         <div class="flex flex-col w-full gap-2 text-sm col-span-12">
                             <label for="description" class="font-medium">Description</label>

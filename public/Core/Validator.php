@@ -47,6 +47,13 @@
             return is_numeric($value) && floatval($value) > 0;
         }
 
+        public static function item($value){
+            return is_numeric($value) && strpos($value, '.') === false && strpos($value, 'e') === false;
+        }
+
+        public static function quantity($value){
+            return self::item($value) && intval($value) > 0;
+        }
 
         public static function password($value){
             $pattern = '/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/';

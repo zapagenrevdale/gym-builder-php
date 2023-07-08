@@ -12,10 +12,10 @@
                 <div class="pb-4 overflow-hidden  rounded-md ">
                     <image src="' . $product["image_link"] .'" class="w-full max-w-[350px] h-auto hover:scale-105 duration-300 " />
                 </div>
-                <div class="flex flex-col items-center justify-center border py-2 rounded-md primary-button-white hover:hover-button-white ">
+                <a href="/products/show?product_id='. $product["product_id"]  .'" class="flex flex-col items-center justify-center border py-2 rounded-md primary-button-white hover:hover-button-white ">
                    <p class="text-center text-sm font-semibold"> ' . $product["name"] .' </p>
                    <p class="font-light text-sm"> Php ' . $product["price"] .' </p>
-                </div>
+                </a>
             </div>
                 ';
         }

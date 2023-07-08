@@ -25,6 +25,10 @@ if (! Validator::image($_FILES['productImage'])) {
     $errors['productImage'] = 'Please provide a valid image.';
 }
 
+if (! Validator::item($_POST['item'])) {
+    $errors['item'] = 'Please provide a valid item number.';
+}
+
 if (! empty($errors)) {
     return view("admin/products/create.php", [
         'title' => $title,
@@ -36,11 +40,12 @@ $uniqueName = uniqid() . '_' . $_FILES['productImage']['name'];
 $uploadFile = "images/uploads/" . $uniqueName;
 
 if (move_uploaded_file($_FILES['productImage']['tmp_name'], $uploadFile)) {
-    $db->query('INSERT INTO products(name, description, price, image_link) VALUES(?, ?, ?, ?)', [
+    $db->query('INSERT INTO products(name, description, price, image_link, item) VALUES(?, ?, ?, ?, ?)', [
         $_POST['name'],
         $_POST['description'],
         $_POST['price'],
         $uploadFile? "/{$uploadFile}": null,
+        $_POST['item']
     ]);  
 }else{
     abort();

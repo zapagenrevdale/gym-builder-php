@@ -5,7 +5,7 @@
     view("partials/header.php");
 ?>
 
-<form method="POST" action="/" class="container flex flex-col justify-center max-w-[600px] gap-8 w-full py-16">
+<form method="POST" action="/register" class="container flex flex-col justify-center max-w-[600px] gap-8 w-full py-16">
 
     <div class="flex flex-col items-center gap-6 justify-center">
         <h1 class="text-5xl font-semibold text-center">Register</h1>

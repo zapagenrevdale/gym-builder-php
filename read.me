@@ -28,7 +28,8 @@ CREATE TABLE products (
   name VARCHAR(255) NOT NULL,
   description TEXT,
   price DECIMAL(10, 2) NOT NULL,
-  image_link VARCHAR(255)
+  image_link VARCHAR(255),
+  item INT NOT NULL DEFAULT 0
 );
 
 -- Orders Entity
@@ -79,5 +80,16 @@ CREATE TABLE inventory (
   inventory_id INT PRIMARY KEY AUTO_INCREMENT,
   product_id INT,
   quantity INT NOT NULL DEFAULT 0,
+  FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
+
+
+CREATE TABLE cart (
+  cart_id INT PRIMARY KEY AUTO_INCREMENT,
+  user_id INT,
+  product_id INT,
+  quantity INT NOT NULL,
+  date_added DATETIME DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES users(user_id),
   FOREIGN KEY (product_id) REFERENCES products(product_id)
 );

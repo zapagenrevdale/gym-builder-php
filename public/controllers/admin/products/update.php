@@ -22,6 +22,10 @@
         $errors['price'] = 'Please enter a valid price.';
     }
 
+    if (! Validator::item($_POST['item'])) {
+        $errors['item'] = 'Please enter a valid item number.';
+    }
+
     if(strlen($_FILES['productImage']["name"]) === 0 || strlen($_FILES['productImage']["full_path"]) === 0){
         $uploadFile  = $edit_product["image_link"];
     }else{
@@ -45,12 +49,12 @@
         ]);
     }
 
-
-    $db->query('UPDATE products SET name = ?, description = ?, price = ?, image_link = ? WHERE product_id = ?', [
+    $db->query('UPDATE products SET name = ?, description = ?, price = ?, image_link = ?, item = ? WHERE product_id = ?', [
         $_POST['name'],
         $_POST['description'],
         $_POST['price'],
         $uploadFile,
+        $_POST['item'],
         $_POST["product_id"],
     ]); 
 

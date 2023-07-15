@@ -14,15 +14,9 @@ if(isset($_SESSION['admin'])){
 }
 
 if(!isset($_SESSION['user'])){
-    header("Location: /login");
-    exit();
+    header('location: /login');
+    exit;
 }
-
-if (! Validator::quantity($_POST['quantity'])) {
-    header("Location: {$_SESSION['previous_route']}");
-    exit();
-}
-
 $user = $db->query("select * from users where email = ?", [$_SESSION["user"]["email"]])->findOrFail();
 
 $db->query("INSERT INTO cart(user_id, product_id, quantity) VALUES(?, ?, ?) ", [

@@ -53,10 +53,10 @@
                         <div class="flex flex-col w-full gap-2 text-sm col-span-3">
                             <label for="admin" class="font-medium">Admin Access</label>
                             <select class="h-10 border rounded-md focus:border px-4 w-full" name="admin">
-                                <option value="0" selected>
+                                <option value="0" <?= $edit_user["admin"] === 0? "selected": "" ?>>
                                     NO
                                 </option>
-                                <option value="1">
+                                <option value="1" <?= $edit_user["admin"] === 0? "": "selected" ?>>
                                     YES
                                 </option>
                             </select>

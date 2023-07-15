@@ -32,16 +32,18 @@ CREATE TABLE products (
   item INT NOT NULL DEFAULT 0
 );
 
--- Orders Entity
 CREATE TABLE orders (
   order_id INT PRIMARY KEY AUTO_INCREMENT,
   user_id INT,
   address_id INT,
-  order_date DATE NOT NULL,
+  order_date DATETIME NOT NULL,
   total_amount DECIMAL(10, 2) NOT NULL,
+  status TINYINT NOT NULL,
+  delivery_status VARCHAR(20),
   FOREIGN KEY (user_id) REFERENCES users(user_id),
   FOREIGN KEY (address_id) REFERENCES addresses(address_id)
 );
+
 
 -- orderitems Entity
 CREATE TABLE orderitems (
@@ -62,6 +64,8 @@ CREATE TABLE payments (
   transaction_id VARCHAR(255) NOT NULL,
   amount DECIMAL(10, 2) NOT NULL,
   payment_date DATETIME NOT NULL,
+  payment_intent_id VARCHAR(255),
+  source_id VARCHAR(255),
   FOREIGN KEY (order_id) REFERENCES orders(order_id)
 );
 
@@ -72,8 +76,10 @@ CREATE TABLE tutorials (
   title VARCHAR(255) NOT NULL,
   content TEXT,
   video_link VARCHAR(255),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
+
 
 -- inventory Entity
 CREATE TABLE inventory (
@@ -92,4 +98,15 @@ CREATE TABLE cart (
   date_added DATETIME DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (user_id) REFERENCES users(user_id),
   FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
+
+CREATE TABLE reviews (
+  review_id INT PRIMARY KEY AUTO_INCREMENT,
+  product_id INT,
+  user_id INT,
+  rating INT NOT NULL,
+  comment TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (product_id) REFERENCES products(product_id),
+  FOREIGN KEY (user_id) REFERENCES users(user_id)
 );

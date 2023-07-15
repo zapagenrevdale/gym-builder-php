@@ -68,11 +68,7 @@
                 </form>
             </div>
         </div>
-
-
     </div>
 </div>
 
-
-<script>
 <?php view("partials/footer.php"); ?>

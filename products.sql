@@ -38,7 +38,7 @@ CREATE TABLE `products` (
 --
 -- Dumping data for table `products`
 --
-
+  
 INSERT INTO `products` (`product_id`, `name`, `description`, `price`, `image_link`) VALUES
 (39, 'Heavy Duty Deadlift Jack', '2x2 BASE (Solid Steel)\r\n2mm Thickness\r\n(Standard)\r\n\r\nMATTE FINISH', 1500.00, '/images/uploads/64a419ac3b0fc_heavy-duty-deadlift-jack.jpg'),
 (40, 'Heavy Duty Multi Function Power Cage', '2 x 3 BASE\r\n2mm Thickness\r\n(Standard)\r\n\r\nMAX USER WEIGHT: 300KG\r\nMATTE FINISH', 12000.00, '/images/uploads/64a41a1568c39_heavy-duty-multi-function-power-cage.jpg'),

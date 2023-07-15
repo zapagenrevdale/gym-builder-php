@@ -41,6 +41,7 @@
                         foreach($carts as $cart){
                             $product = $cart["product"];
                             $subtotal += $cart["quantity"] * $product["price"];
+                     
                             echo    '
                                         <div class="flex py-8 gap-6 border-b">
                                             <form action="/cart" method="POST" class="w-16 flex items-center justify-center">
@@ -57,9 +58,9 @@
                                                 <img src="'. $product["image_link"] .'" class="w-20 h-20" />
                                                 <div class="flex flex-col ">
                                                     <h3 class="font-bold">
-                                                        Heavy Duty powercage
+                                                        '. $product["name"] . '
                                                     </h3>
-                                                    <h3 class="text-sm">Items available: <span class="pl-4 font-semibold" id="items_'. $cart["cart_id"] .'">20</span></h3>
+                                                    <h3 class="text-sm">Items available: <span class="pl-4 font-semibold" id="items_'. $cart["cart_id"] .'">'. $product["item"] .'</span></h3>
                                                 </div>
                                             </div>
                                             <div class="w-24 flex items-center ">

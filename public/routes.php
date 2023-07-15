@@ -1,6 +1,8 @@
 <?php
     
     $router->get('/', 'controllers/index.php');
+    $router->get('/about', 'controllers/about.php');
+    $router->get('/contact', 'controllers/contact.php');
 
     //LOGIN 
     $router->get('/login', 'controllers/login/create.php')->only("guest");
@@ -35,7 +37,6 @@
     $router->get('/admin/tutorials/edit', 'controllers/admin/tutorials/edit.php')->only("admin");
 
     // routes for USERS CRUD
-
     $router->get('/admin/users', 'controllers/admin/users/index.php')->only("admin");
     $router->post('/admin/users', 'controllers/admin/users/store.php')->only("admin");
     $router->patch('/admin/users', 'controllers/admin/users/update.php')->only("admin");
@@ -43,6 +44,10 @@
 
     $router->get('/admin/users/create', 'controllers/admin/users/create.php')->only("admin");
     $router->get('/admin/users/edit', 'controllers/admin/users/edit.php')->only("admin");
+
+    // routes for ORDERS CRUD
+    $router->get('/admin/orders', 'controllers/admin/orders/index.php')->only("admin");
+    $router->patch('/admin/orders', 'controllers/admin/orders/update.php')->only("admin");
 
     //routes for session
     $router->get('/logout', 'controllers/session/destroy.php')->only("auth");
@@ -52,10 +57,10 @@
     $router->get('/products/show', 'controllers/products/show.php');
 
     //routes for Cart
-    $router->get('/cart', 'controllers/cart/index.php');
+    $router->get('/cart', 'controllers/cart/index.php')->only("auth");
     $router->post('/cart', 'controllers/cart/store.php');
-    $router->patch('/cart', 'controllers/cart/update.php');
-    $router->delete('/cart', 'controllers/cart/delete.php');
+    $router->patch('/cart', 'controllers/cart/update.php')->only("auth");
+    $router->delete('/cart', 'controllers/cart/delete.php')->only("auth");
 
     // profile
     $router->get('/profile', 'controllers/profile/index.php')->only("auth");
@@ -65,8 +70,20 @@
     $router->get('/profile/address', 'controllers/profile/address/index.php')->only("auth");
     $router->patch('/profile/address', 'controllers/profile/address/update.php')->only("auth");
 
+    //orders
+    $router->get('/profile/orders', 'controllers/profile/orders/index.php')->only("auth");
+    $router->post('/order', 'controllers/profile/orders/store.php')->only("auth");
+
     //checkout
     $router->get('/checkout', 'controllers/checkout/index.php')->only("auth");
+    $router->post('/checkout', 'controllers/checkout/store.php')->only("auth");
+
+
+    $router->get('/payment', 'controllers/payment/index.php')->only("auth");
+
+
+    
+    
 
     
 ?>

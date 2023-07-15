@@ -3,6 +3,9 @@
     use Core\App;
     $db = App::resolve(Database::class);
 
+    if(isset($_SESSION['admin'])){
+        abort(403);
+    }
     
     $user = $db->query('select user_id from users where email = ? ', [$_SESSION["user"]["email"]] )->findOrFail();
     $carts = $db->query('select * from cart where user_id = ?', [$user["user_id"]])->get();

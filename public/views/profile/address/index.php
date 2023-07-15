@@ -7,16 +7,16 @@
 
 <div class="flex flex-col h-screen">
 
-    <div class="p-12  ">
+    <div class="p-12">
         <div class="flex flex-col items-center gap-6 justify-center pb-20">
             <h1 class="text-5xl font-semibold text-center">My Account</h1>
             <div class="flex items-center gap-2 justify-center mb-4">
-                <a href="">Home</a>
+                <a href="/">Home</a>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-4 h-4 text-neutral-800">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                 </svg>
-                <a href="">Address</a>
+                <a href="/profile/address">Address</a>
             </div>
         </div>
 
@@ -80,6 +80,4 @@
     </div>
 </div>
 
-
-<script>
 <?php view("partials/footer.php"); ?>

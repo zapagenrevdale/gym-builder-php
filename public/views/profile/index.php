@@ -67,9 +67,9 @@
                     </button>
                 </form>
 
-                <?php if($user["verified"] === 0): ?>
+                <?php if($user["verified"] == 0): ?>
 
-                <form action="/email-verification" class="pt-10">
+                <form action="/email-verification/send-verification" class="pt-10">
                     <h1 class="text-3xl font-bold pb-2">Notice:</h1>
                     <p class="font-semibold text-red-600">You need to verify your email so that you can order.</p>
                     <button type="submit"

@@ -90,4 +90,5 @@
 
     $router->get('/email-verification', 'controllers/email-verification/create.php')->only("user");
     $router->post('/email-verification', 'controllers/email-verification/store.php')->only("user");
+    $router->get('/email-verification/send-verification', 'controllers/email-verification/sendmail.php')->only("user");
 ?>

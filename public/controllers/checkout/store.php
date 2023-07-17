@@ -103,8 +103,7 @@ if($_POST["payment"] === '1'){
             $data = [
                 "method_id" => $paymentMethodData->data->id,
                 "client_key" => $paymentIntentData->data->attributes->client_key,
-                //"return_url" => $config['return-uri']
-                "return_url" => "http://localhost:80/payment"
+                "return_url" => $config['return-uri']
             ]
         );
 

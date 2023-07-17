@@ -47,7 +47,7 @@ if(! empty($errors)){
     ]);
 }
 
-$verified = 1;
+$verified = $edit_user["verified"];
 if($edit_user["email"] !== $_POST['email']){
     $verified = 0;
 }

@@ -22,7 +22,7 @@
     $receiver = new Entity("revhea2@gmail.com", $user["first_name"]. ' '.$user["last_name"]);
 
     $otp = substr(uniqid(), -6);
-    $emailverify->sendEmailVerification($receiver, $otp);
+    // $emailverify->sendEmailVerification($receiver, $otp);
 
     $expirationTime = date('Y-m-d H:i:s', strtotime('+5 minutes'));
 

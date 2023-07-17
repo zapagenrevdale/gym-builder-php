@@ -138,6 +138,15 @@
                             class="mt-3 primary-button text-center  primary-button-black hover:bg-neutral-800/90 flex justify-center items-center gap-4 rounded-md font-semibold">
                             Place Order Now
                         </button>
+
+                        <?php if(isset($errors["email"])): ?>
+
+                        <p class="text-red-700 font-semibold text-center"> <?= $errors["email"] ?> </p>
+                        <a href="/profile" target="_blank" class="font-semibold text-center underline"> Verify Now! </a>
+
+                        <?php endif;?>
+
+
                     </div>
                 </form>
 

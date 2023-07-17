@@ -46,21 +46,28 @@ if(! empty($errors)){
     ]);
 }
 
+$verified = 1;
+if($edit_user["email"] !== $_POST['email']){
+    $verified = 0;
+}
+
 if($no_password){
-    $db->query('UPDATE users SET first_name = ?, last_name = ?, email = ?, admin = ? WHERE user_id = ?', [
+    $db->query('UPDATE users SET first_name = ?, last_name = ?, email = ?, admin = ?, verified = ? WHERE user_id = ?', [
         $_POST["first_name"], 
         $_POST["last_name"], 
         $_POST["email"], 
         $_POST["admin"],
+        $verified,
         $_POST["user_id"]
     ]);
 }else {
-    $db->query('UPDATE users SET first_name = ?, last_name = ?, email = ?, password = ?, admin = ? WHERE user_id = ?', [
+    $db->query('UPDATE users SET first_name = ?, last_name = ?, email = ?, password = ?, admin = ?, verified = ? WHERE user_id = ?', [
         $_POST["first_name"], 
         $_POST["last_name"], 
         $_POST["email"], 
         password_hash($_POST["password"], PASSWORD_BCRYPT),
         $_POST["admin"],
+        $verified,
         $_POST["user_id"]
     ]);
 }

@@ -49,6 +49,10 @@
     $router->get('/admin/orders', 'controllers/admin/orders/index.php')->only("admin");
     $router->patch('/admin/orders', 'controllers/admin/orders/update.php')->only("admin");
 
+    //routes for dashboard
+    $router->get('/admin/dashboard', 'controllers/admin/dashboard.php')->only("admin");
+    $router->get('/admin', 'controllers/admin/dashboard.php')->only("admin");
+
     //routes for session
     $router->get('/logout', 'controllers/session/destroy.php')->only("auth");
 
@@ -57,33 +61,33 @@
     $router->get('/products/show', 'controllers/products/show.php');
 
     //routes for Cart
-    $router->get('/cart', 'controllers/cart/index.php')->only("auth");
-    $router->post('/cart', 'controllers/cart/store.php');
-    $router->patch('/cart', 'controllers/cart/update.php')->only("auth");
-    $router->delete('/cart', 'controllers/cart/delete.php')->only("auth");
+    $router->get('/cart', 'controllers/cart/index.php')->only("user");
+    $router->post('/cart', 'controllers/cart/store.php')->only("user");//should this be user??    $router->patch('/cart', 'controllers/cart/update.php')->only("user");
+    $router->delete('/cart', 'controllers/cart/delete.php')->only("user");
 
     // profile
-    $router->get('/profile', 'controllers/profile/index.php')->only("auth");
-    $router->patch('/profile', 'controllers/profile/profile.update.php')->only("auth");
+    $router->get('/profile', 'controllers/profile/index.php')->only("user");
+    $router->patch('/profile', 'controllers/profile/profile.update.php')->only("user");
 
     // address
-    $router->get('/profile/address', 'controllers/profile/address/index.php')->only("auth");
-    $router->patch('/profile/address', 'controllers/profile/address/update.php')->only("auth");
+    $router->get('/profile/address', 'controllers/profile/address/index.php')->only("user");
+    $router->patch('/profile/address', 'controllers/profile/address/update.php')->only("user");
 
     //orders
-    $router->get('/profile/orders', 'controllers/profile/orders/index.php')->only("auth");
-    $router->post('/order', 'controllers/profile/orders/store.php')->only("auth");
+    $router->get('/profile/orders', 'controllers/profile/orders/index.php')->only("user");
+    $router->post('/order', 'controllers/profile/orders/store.php')->only("user");
 
     //checkout
-    $router->get('/checkout', 'controllers/checkout/index.php')->only("auth");
-    $router->post('/checkout', 'controllers/checkout/store.php')->only("auth");
+    $router->get('/checkout', 'controllers/checkout/index.php')->only("user");
+    $router->post('/checkout', 'controllers/checkout/store.php')->only("user");
 
 
-    $router->get('/payment', 'controllers/payment/index.php')->only("auth");
+    $router->get('/payment', 'controllers/payment/index.php')->only("user");
+
+    $router->get('/review', 'controllers/reviews/create.php')->only("user");
+    $router->post('/review', 'controllers/reviews/store.php')->only("user");
 
 
-    
-    
-
-    
+    $router->get('/email-verification', 'controllers/email-verification/create.php')->only("user");
+    $router->post('/email-verification', 'controllers/email-verification/store.php')->only("user");
 ?>

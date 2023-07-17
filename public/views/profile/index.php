@@ -66,6 +66,19 @@
                         Update
                     </button>
                 </form>
+
+                <?php if($user["verified"] === 0): ?>
+
+                <form action="/email-verification" class="pt-10">
+                    <h1 class="text-3xl font-bold pb-2">Notice:</h1>
+                    <p class="font-semibold text-red-600">You need to verify your email so that you can order.</p>
+                    <button type="submit"
+                        class="mt-3 primary-button text-center  primary-button-black hover:bg-neutral-800/90 flex justify-center items-center gap-4 rounded-md font-semibold">
+                        Verify Email Address
+                    </button>
+                </form>
+
+                <?php endif; ?>
             </div>
         </div>
     </div>

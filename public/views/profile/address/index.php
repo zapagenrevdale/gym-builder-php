@@ -68,7 +68,17 @@
                             class="h-10 focus:outline-none border-b focus:focus:border-b-2 focus:border-neutral-700 border-neutral-300 w-full "
                             value="<?= $address['postal_code'] ?? "" ?>" />
                     </div>
-                    <?= isset($errors["city"]) ? '<p class="text-red-700 text-sm">'. $errors["city"] .'</p>' : '' ?>
+                    <?= isset($errors["postal_code"]) ? '<p class="text-red-700 text-sm">'. $errors["postal_code"] .'</p>' : '' ?>
+
+                    <div class="py-4 flex items-center">
+                        <label for="phone_number" class="w-44">Phone Number</label>
+                        <input required type="text" id="phone_number" name="phone_number"
+                            class="h-10 focus:outline-none border-b focus:focus:border-b-2 focus:border-neutral-700 border-neutral-300 w-full "
+                            value="<?= $address['phone_number'] ?? "" ?>" />
+                    </div>
+                    <?= isset($errors["phone_number"]) ? '<p class="text-red-700 text-sm">'. $errors["phone_number"] .'</p>' : '' ?>
+
+
 
                     <button type="submit"
                         class="w-40 mt-3 primary-button text-center  primary-button-black hover:bg-neutral-800/90 flex justify-center items-center gap-4 rounded-md font-semibold">

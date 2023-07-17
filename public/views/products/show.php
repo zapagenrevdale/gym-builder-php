@@ -13,6 +13,29 @@
         <div class="flex flex-col justify-between items-center p-10">
             <div>
                 <h1 class="text-2xl font-bold"><?= $product["name"] ?></h1>
+                <?php
+                    $stars = '<div class=" flex gap-1 py-1 ">';
+                    if($product["rating"]){
+                        for($i = 1; $i <= 5; $i++){
+                            $color = $i <= $product["rating"]? "text-yellow-500": "text-neutral-300";
+                            $stars .= '
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="w-6 h-6 '. $color .'">
+                                <path fill-rule="evenodd"
+                                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            ';
+                            if($i === 5){
+                                $stars .= "<p class='text-neutral-500 text-lg'>(". $product["rating_count"] .")</p>";
+                            }
+                        }
+                    }
+
+                    $stars .= "</div>";
+                    echo $stars;
+                ?>
+
                 <h3 class="text-xl font-medium pb-10">₱<?= $product["price"] ?></h3>
                 <pre><?= $product["description"] ?></pre>
                 <h3 class="pt-14">Items remaining: <span class="pl-4 font-semibold"
@@ -61,6 +84,66 @@
             </div>
         </div>
     </div>
+
+
+    <?php if($product["reviews"]): ?>
+    <div class="flex flex-col items-center pt-20 gap-6 max-w-[1536px]">
+        <div class="flex gap-4 items-center font-grotesk pb-8">
+            <h3 class="text-3xl font-black">
+                PRODUCT RATING:
+            </h3>
+            <p class="text-3xl font-bold">
+                <span class="text-neutral-600"><?= round($product["rating"], 1) ?> </span>
+                <span> / 5</span>
+            </p>
+        </div>
+
+        <?php foreach($product["reviews"] as $review): ?>
+
+        <div class="flex flex-col min-w-full max-w-[800px]">
+            <!-- stars  -->
+            <div class="flex justify-between items-center">
+                <?php
+                    $stars = '<div class=" flex gap-1 py-1 ">';
+
+                    for($i = 1; $i <= 5; $i++){
+                        $color = $i <= $review["rating"]? "text-yellow-500": "text-neutral-300";
+                        $stars .= '
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="w-6 h-6 '. $color .'">
+                            <path fill-rule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        ';
+                    }
+
+                    $stars .= "</div>";
+                    echo $stars;
+                ?>
+                <time><?= date("F d, Y", strtotime($review["created_at"])); ?></time>
+            </div>
+
+            <h5 class="text-neutral-600">
+                <?= $review["name"] ?>
+            </h5>
+
+            <div class="w-full bg-neutral-100 mt-3 p-2">
+                <p class="text-lg">
+                    <?= $review["comment"] ?>
+                </p>
+            </div>
+
+
+        </div>
+
+        <?php endforeach; ?>
+
+    </div>
+
+    <?php endif; ?>
+
+
     <?php if($tutorial): ?>
 
     <div class="flex flex-col items-center pt-20 gap-4 max-w-[1536px]">
@@ -81,6 +164,7 @@
     </div>
 
     <?php endif; ?>
+
 
 </div>
 

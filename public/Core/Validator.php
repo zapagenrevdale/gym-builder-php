@@ -59,5 +59,10 @@
             $pattern = '/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/';
             return preg_match($pattern, $value);
         }
+
+        public static function mobileNumber($value){
+            // Check if the resulting value is a valid mobile number format
+            return preg_match('/^\+639\d{9}$/', $value);
+        }
     }
 ?>

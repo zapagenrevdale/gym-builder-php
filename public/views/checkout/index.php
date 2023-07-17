@@ -63,6 +63,7 @@
             </div>
 
             <div>
+                <?= isset($errors["address"]) ? '<p class="text-red-700 font-semibold text-center">'. $errors["address"] .'</p>' : '' ?>
                 <div class="flex flex-col p-4 shadow-md rounded-md mb-4 max-w-[400px]">
                     <div class="flex items-center justify-between">
                         <h1 class="font-semibold text-xl font-grotesk pb-2">Shipping Address: </h1>
@@ -89,7 +90,8 @@
                         ?>
                     </address>
                 </div>
-                <form action="/checkout" method="POST"  class="p-10 bg-neutral-100 rounded-md w-[400px] overflow-hidden">
+
+                <form action="/checkout" method="POST" class="p-10 bg-neutral-100 rounded-md w-[400px] overflow-hidden">
                     <div class="flex flex-col gap-3 h-fit mb-10">
                         <h1 class="text-xl font-semibold">Select Payment</h1>
 

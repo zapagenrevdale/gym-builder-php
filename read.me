@@ -7,8 +7,10 @@ CREATE TABLE users (
   last_name VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL,
-  admin TINYINT(1) NOT NULL DEFAULT 0
+  admin TINYINT(1) NOT NULL DEFAULT 0,
+  verified TINYINT(1) NOT NULL DEFAULT 0
 );
+
 
 -- addresses Entity
 CREATE TABLE addresses (
@@ -19,6 +21,7 @@ CREATE TABLE addresses (
   city VARCHAR(255) NOT NULL,
   country VARCHAR(255) NOT NULL,
   postal_code VARCHAR(255) NOT NULL,
+  phone_number VARCHAR(255), -- New column for phone number
   FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
@@ -102,11 +105,25 @@ CREATE TABLE cart (
 
 CREATE TABLE reviews (
   review_id INT PRIMARY KEY AUTO_INCREMENT,
-  product_id INT,
+  order_item_id INT,
   user_id INT,
   rating INT NOT NULL,
   comment TEXT,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  FOREIGN KEY (product_id) REFERENCES products(product_id),
+  FOREIGN KEY (order_item_id) REFERENCES orderitems(order_item_id),
   FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
+
+CREATE TABLE IF NOT EXISTS error_log (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    error_message VARCHAR(255),
+    error_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE emailotp (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  email VARCHAR(255) NOT NULL,
+  otp VARCHAR(10) NOT NULL,
+  expiration_time DATETIME NOT NULL
 );

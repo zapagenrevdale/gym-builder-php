@@ -18,8 +18,8 @@
             <a href="">Payment Status</a>
         </div>
     </div>
-    <?php if($status === "consumed"): ?>
-    <h3 class="text-3xl font-grotesk font-semibold text-center mt-32">Payment Successful! 🎉</h3>
+
+    <h3 class="text-3xl font-grotesk font-semibold text-center mt-32"><?= $status ?></h3>
     <div class="flex gap-4">
         <a type="submit" href="/"
             class="cursor-pointer mt-3 primary-button text-center  primary-button-black hover:bg-neutral-800/90 flex justify-center items-center gap-4 rounded-md font-semibold">
@@ -30,9 +30,6 @@
             Go to orders
         </a>
     </div>
-    <?php else: ?>
-    <h4>Payment Unsucessful!</h4>
-    <?php endif; ?>
 </div>
 
 <?php view("partials/footer.php"); ?>

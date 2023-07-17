@@ -21,7 +21,7 @@
                     <thead class="table-head text-neutral-800 h-16 rounded-t-lg border ">
                         <tr class=" overflow-hidden">
                             <th class="w-16 text-left px-4 select-none">ID</th>
-                            <th class="w-16 text-left px-4 select-none">Email</th>
+                            <th class="w-28 text-left px-4 select-none">Email</th>
                             <th class="w-40 text-left px-4 select-none">Name</th>
                             <th class="w-16 text-left px-4 select-none">Total Amount</th>
                             <th class="w-12 text-left px-4 select-none" title="Payment Status">Payment</th>

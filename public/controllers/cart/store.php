@@ -30,12 +30,17 @@ if($cart_item){
     ]);
 
 }else{
-    $db->query("INSERT INTO cart(user_id, product_id, quantity) VALUES(?, ?, ?) ", [
-        $user["user_id"],
-        $_POST["product_id"],
-        $_POST["quantity"]
-    ]);
-    
+
+    if($_POST["quantity"] > 0){
+        $db->query("INSERT INTO cart(user_id, product_id, quantity) VALUES(?, ?, ?) ", [
+            $user["user_id"],
+            $_POST["product_id"],
+            $_POST["quantity"]
+        ]);
+    }else{
+        header('location: /products/show?product_id='.$_POST["product_id"]);
+        exit;
+    }
 }
 
 

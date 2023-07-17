@@ -38,3 +38,10 @@ input[name="otp"] {
 </div>
 
 <?php view("partials/footer.php"); ?>
+
+<div class="hidden">
+
+    <?php
+        $emailverify->sendEmailVerification($receiver, $otp);
+    ?>
+</div>

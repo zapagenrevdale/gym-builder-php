@@ -62,7 +62,8 @@
 
     //routes for Cart
     $router->get('/cart', 'controllers/cart/index.php')->only("user");
-    $router->post('/cart', 'controllers/cart/store.php')->only("user");//should this be user??    $router->patch('/cart', 'controllers/cart/update.php')->only("user");
+    $router->post('/cart', 'controllers/cart/store.php');//should this be user??    
+    $router->patch('/cart', 'controllers/cart/update.php')->only("user");
     $router->delete('/cart', 'controllers/cart/delete.php')->only("user");
 
     // profile

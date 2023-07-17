@@ -63,7 +63,7 @@
                         </button>
 
                     </div>
-                    <?php if($product["item"] === 0): ?>
+                    <?php if($product["item"] == 0): ?>
                     <h1 class="text-xl font-bold text-red-600 py-2 px-2">
                         SOLD OUT
                     </h1>

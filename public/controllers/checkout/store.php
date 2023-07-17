@@ -7,6 +7,8 @@ use Core\PaymongoAPI;
 
 $db = App::resolve(Database::class);
 
+$config = require base_path('config.php');
+
 
 $user = $db->query('select * from users where email = ? ', [$_SESSION["user"]["email"]] )->findOrFail();
 $carts = $db->query('select * from cart where user_id = ?', [$user["user_id"]])->get();
@@ -26,7 +28,7 @@ if(!$address){
     exit();
 }
 
-if($user["verified"] === 0){
+if($user["verified"] == 0){
     foreach($carts as &$cart){
         $product = $db->query('select * from products where product_id = ?', [$cart["product_id"]])->find();
         $cart["product"] = $product;

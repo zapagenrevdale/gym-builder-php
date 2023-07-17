@@ -19,8 +19,8 @@ $config = [
     'payment-source-retrieve-uri' => "https://api.paymongo.com/v1/sources",
     'username' => "pk_test_LwC7nLLvuikPyqyADUD4NbUr",
     'secretKey' => "sk_test_nKDCnSfbE2SttXTBVx6gbpHW",
-    'return-uri' => "http://gymbuilderph.com/controller/payment_api/return.php",
-    'webhook-uri' => "http://gymbuilderph.com/controller/payment_api/webhook2.php",
+    'return-uri' => "http://gymbuilderph.com/payment",
+    'webhook-uri' => "http://gymbuilderph.com/payment_api/webhook2.php",
 ];
 
 $config['userPassEncode'] = base64_encode($config['username'] . ":" . $config['secretKey']);

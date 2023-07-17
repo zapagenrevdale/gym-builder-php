@@ -42,7 +42,7 @@
                                         <td class="px-2 border-l">' . $user["first_name"] .'</td>
                                         <td class="px-2 border-l">' . $user["last_name"] .'</td>
                                         <td class="px-2 border-l">' . $user["email"] .'</td>
-                                        <td class="px-2 border-l">' . ($user["admin"] === 0? "NO" : "YES") .'</td>
+                                        <td class="px-2 border-l">' . ($user["admin"] == 0? "NO" : "YES") .'</td>
                                         <td class="px-2 border-l text-sm text-center">
                                             <a href="/admin/users/edit?user_id='. $user["user_id"] .'" class="text-blue-700 cursor-pointer hover:underline underline-offset-4">Edit</a>
                                         </td>

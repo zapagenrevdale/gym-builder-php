@@ -12,7 +12,7 @@
 
     $user = $db->query('select * from users where email = ? ', [$_SESSION["user"]["email"]] )->findOrFail();
 
-    if($user["verified"] === 1){
+    if($user["verified"] == 1){
         header("Location: /profile");
         exit();
     }

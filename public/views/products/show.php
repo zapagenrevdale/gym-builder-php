@@ -190,7 +190,7 @@ function decrementQuantity() {
         quantityInput.value = quantity.toString();
     }
 
-    if (quantity === 0) {
+    if (quantity == 0) {
         button.disabled = true;
     }
 

@@ -79,10 +79,10 @@
                                 echo "No address provided yet....";
                             }else{
                                 $full_address = "";
-                                $full_address .= strlen($address["address_line1"]) === 0 ? "" : $address["address_line1"] . ', ';
-                                $full_address .= strlen($address["address_line2"]) === 0 ? "" : $address["address_line2"] . ', ';
-                                $full_address .= strlen($address["city"]) === 0 ?  "" : $address["city"] . ', ';
-                                $full_address .= strlen($address["country"]) === 0 ? "" : $address["country"] . ', ';
+                                $full_address .= strlen($address["address_line1"]) == 0 ? "" : $address["address_line1"] . ', ';
+                                $full_address .= strlen($address["address_line2"]) == 0 ? "" : $address["address_line2"] . ', ';
+                                $full_address .= strlen($address["city"]) == 0 ?  "" : $address["city"] . ', ';
+                                $full_address .= strlen($address["country"]) == 0 ? "" : $address["country"] . ', ';
                                 $full_address .= $address["postal_code"] ?? "";
                                 
                                 echo $full_address; 

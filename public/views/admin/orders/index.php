@@ -40,10 +40,10 @@
                                         <input type="text" name="_method" hidden value="patch" />
                                         <input type="text" name="order_id[]" hidden value="' . $order["order_id"] .'" />
                                         <select class="h-10 border rounded-md focus:border px-1 w-full" name="payment_status[]">
-                                            <option value="0" '. ($order["status"] === 0? "selected": "") . '>
+                                            <option value="0" '. ($order["status"] == 0? "selected": "") . '>
                                                 unpaid
                                             </option>
-                                            <option value="1" '. ($order["status"] === 1? "selected": "") . '>
+                                            <option value="1" '. ($order["status"] == 1? "selected": "") . '>
                                                 paid
                                             </option>
                                         </select>

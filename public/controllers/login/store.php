@@ -30,7 +30,7 @@ if ($user) {
     if (password_verify($_POST["password"], $user['password'])) {
        
 
-        if($user["admin"] === 1){
+        if($user["admin"] == 1){
             adminLogin([
                 'email' => $_POST["email"]
             ]);

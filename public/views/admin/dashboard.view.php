@@ -16,7 +16,7 @@
                 DASHBOARD
             </div>
 
-            <article class="grid grid-cols-3 p-10 gap-10">
+            <article class="grid md:grid-cols-2 lg:grid-cols-3 p-10 gap-10">
                 <!--  -->
                 <div class="shadow-md p-5">
                     <h1 class="font-bold text-lg"> Total Earned (Paid):</h1>
@@ -65,7 +65,7 @@
 
             <article class="p-10">
                 <h1 class="text-xl font-bold">Most Ordered Products</h1>
-                <div class="grid grid-cols-4 gap-5">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5">
 
                     <?php foreach ($products as $index => $product): ?>
                     <div class="shadow-md p-5 flex flex-col justify-between">

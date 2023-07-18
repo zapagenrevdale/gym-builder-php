@@ -5,7 +5,7 @@
                 <img src="/images/logo.png" width="50" height="50" />
                 <span class="font-light">Gym<span class="font-extrabold">Builder</span></span>
             </button>
-            <nav class="invisible lg:visible flex items-center justify-center space-x-8 underline-offset-4">
+            <nav class="hidden lg:flex  items-center justify-center space-x-8 underline-offset-4">
                 <a href="/#shop" class="font-medium text-lg font-grotesk hover:underline cursor-pointer"> Shop </a>
                 <a href="/about" class="font-medium text-lg font-grotesk hover:underline cursor-pointer"> About </a>
                 <a href="/contact" class="font-medium text-lg font-grotesk hover:underline cursor-pointer"> Contact </a>
@@ -13,7 +13,7 @@
                 </a>
             </nav>
             <div class="flex gap-4">
-                <a class="visibile md:invisible cursor-pointer hover:underline underline-offset-4" title="Shop">
+                <a href="/" class="block md:hidden cursor-pointer hover:underline underline-offset-4" title="Shop">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-5 h-5">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -21,7 +21,7 @@
                     </svg>
 
                 </a>
-                <a class="visibile md:invisible cursor-pointer hover:underline" title="About">
+                <a href="/about" class="block md:hidden cursor-pointer hover:underline" title="About">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-5 h-5">
                         <path stroke-linecap="round" stroke-linejoin="round"

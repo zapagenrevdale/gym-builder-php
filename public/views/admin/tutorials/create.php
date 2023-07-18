@@ -63,4 +63,16 @@
     </div>
 </div>
 
+<script>
+var uploadField = document.getElementById("tutorialVideo");
+
+uploadField.onchange = function() {
+    if (this.files[0].size > 41943040) {
+        alert("File is too big!");
+        this.value = "";
+    };
+};
+</script>
+
+
 <?php view("partials/footer.php") ?>

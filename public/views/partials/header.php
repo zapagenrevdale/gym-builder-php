@@ -27,7 +27,7 @@ if(isset($_SESSION["user"])){
                 <?= (isset($_SESSION["admin"]) ? '<a href="/admin/products" class="font-medium text-lg font-grotesk hover:underline cursor-pointer"> Admin </a>': "") ?>
             </nav>
             <div class="flex gap-4">
-                <a class="visibile md:invisible cursor-pointer hover:underline underline-offset-4" title="Shop">
+                <a class="block md:hidden cursor-pointer hover:underline underline-offset-4" title="Shop">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-5 h-5">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -35,7 +35,7 @@ if(isset($_SESSION["user"])){
                     </svg>
 
                 </a>
-                <a class="visibile md:invisible cursor-pointer hover:underline" title="About">
+                <a class="block md:hidden cursor-pointer hover:underline" title="About">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-5 h-5">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -43,7 +43,7 @@ if(isset($_SESSION["user"])){
                     </svg>
 
                 </a>
-                <a class="visibile md:invisible cursor-pointer hover:underline" title="Contact">
+                <a class="block md:hidden cursor-pointer hover:underline" title="Contact">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-5 h-5">
                         <path stroke-linecap="round" stroke-linejoin="round"

@@ -1,5 +1,7 @@
 <?php
 
+    ini_set('post_max_size', '80M');
+    ini_set('upload_max_filesize', '80M');
     session_start();
     date_default_timezone_set('Asia/Manila');
     const BASE_PATH = __DIR__.'/';

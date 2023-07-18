@@ -45,12 +45,11 @@
                                         <td class="px-2 border-l">' . $tutorial["content"] .'</td>
                                         <td class="px-2 border-l ">
                                             <a href="' . $tutorial["video_link"] .'" target="_blank" class="flex items-center gap-2 text-blue-700">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
-                                            </svg>
-                                            Play Video
-                                          </a>
-                                            
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+                                                </svg>
+                                                Play Video
+                                            </a>
                                         </td>
                                         <td class="px-2 border-l text-sm text-center">
                                             <a href="/admin/tutorials/edit?tutorial_id='. $tutorial["tutorial_id"] .'" class="text-blue-700 cursor-pointer hover:underline underline-offset-4">Edit</a>

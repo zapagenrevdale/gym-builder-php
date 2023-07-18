@@ -5,9 +5,9 @@
     view("partials/header.php");
 ?>
 
-<div class="flex flex-col h-screen">
+<div class="flex flex-col min-h-screen w-full items-center ">
 
-    <div class="p-12  ">
+    <div class="p-12 max-w-[1536px] w-full flex flex-col ">
         <div class="flex flex-col items-center gap-6 justify-center pb-20">
             <h1 class="text-5xl font-semibold text-center">My Account</h1>
             <div class="flex items-center gap-2 justify-center mb-4">
@@ -20,9 +20,9 @@
             </div>
         </div>
 
-        <div class="flex divide-x-2">
+        <div class="flex flex-col divide-y-2 md:flex-row md:divide-y-0  md:divide-x-2">
             <?php view("profile/component/sidebar.php"); ?>
-            <div class="px-20 w-[1000px] ">
+            <div class="p-10 md:p-20 w-full  max-w-[1000px]">
                 <h1 class="text-lg pb-16">Hello, <span
                         class="font-semibold"><?= $user["first_name"] . ' ' . $user["last_name"]  ?></span></h1>
                 <h1 class="text-3xl font-semibold pb-6">Account details</h1>

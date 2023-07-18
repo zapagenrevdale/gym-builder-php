@@ -22,6 +22,8 @@ view("partials/header.php");
         </div>
     </div>
     <div class="flex flex-col max-w-[800px] w-full gap-5">
+        <?php view("profile/component/sidebar.php"); ?>
+        <hr />
         <!-- order -->
 
         <?php

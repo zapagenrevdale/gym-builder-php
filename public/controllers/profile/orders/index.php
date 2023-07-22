@@ -18,9 +18,11 @@
 
     foreach($orders as &$order){
         $order["orderitems"] = $db->query("SELECT * FROM orderitems where order_id = ?", [$order["order_id"]])->get();
+        $order["orderitems"] = $db->query("SELECT * FROM orderitems where order_id = ?", [$order["order_id"]])->get();
         $order["status"] = $map_status[$order["status"]];
         $datetime = DateTime::createFromFormat('Y-m-d H:i:s', $order["order_date"]);
         $order["order_date"] =  $datetime->format('F d, Y');
+        $order["long_status"] = $db->query("SELECT status FROM delivery_status WHERE order_id = ? ORDER BY status_id DESC", [$order["order_id"]])->get();
         foreach($order["orderitems"] as &$orderitem){
             $orderitem["product"] = $db->query("SELECT * FROM products where product_id = ?", [$orderitem["product_id"]])->find();
             $orderitem["review"] = $db->query("SELECT * FROM reviews where order_item_id = ?", [$orderitem["order_item_id"]])->find();

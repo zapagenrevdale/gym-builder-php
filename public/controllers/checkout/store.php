@@ -68,7 +68,7 @@ $order = $db->query('SELECT * FROM orders WHERE user_id = ? AND order_date = ?',
 
 
 $order_string = "";
-foreach($carts as $cart){
+foreach($carts as &$cart){
     $db->query('INSERT INTO orderitems(order_id, product_id, quantity, price) VALUES(?, ?, ?, ?)', [
         $order["order_id"],
         $cart["product"]["product_id"],

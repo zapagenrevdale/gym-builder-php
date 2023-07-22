@@ -45,8 +45,21 @@
 
                         <div class="flex flex-col w-full gap-2 text-sm col-span-6">
                             <label for="password" class="font-medium">Password</label>
-                            <input type="password" id="password" name="password"
-                                class="h-10 border rounded-md focus:border px-4 w-full" />
+                            <div class="relative">
+                                <input type="password" id="password" name="password"
+                                    class="h-10 border rounded-md focus:border px-4 w-full" data-toggle="password">
+                                <button id="togglePassword" type="button"
+                                    class="absolute top-2 right-2 h-6 w-6 p-1 focus:outline-none">
+                                    <!-- Add an SVG icon or font icon for the button -->
+                                    <!-- Below is an example of an SVG icon for an eye -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        class="h-4 w-4 text-gray-600" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" id="eyeIcon">
+                                        <path
+                                            d="M12 2C7 2 2.63 5.1 1 12c1.63 6.9 6 10 11 10s9.37-3.1 11-10c-1.63-6.9-6-10-11-10zm0 16c-3.33 0-6-2.67-6-6s2.67-6 6-6 6 2.67 6 6-2.67 6-6 6zm0-4c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm0-2c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1z" />
+                                    </svg>
+                                </button>
+                            </div>
                             <?= isset($errors["password"]) ? '<p class="text-red-700 text-sm">'. $errors["password"] .'</p>' : '' ?>
                         </div>
 
@@ -74,5 +87,27 @@
         </main>
     </div>
 </div>
+
+<script>
+// JavaScript to toggle password visibility
+const togglePassword = document.getElementById("togglePassword");
+const passwordInput = document.getElementById("password");
+const eyeIcon = document.getElementById("eyeIcon");
+
+togglePassword.addEventListener("click", function() {
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        eyeIcon.classList.remove("text-gray-600");
+        eyeIcon.classList.add(
+            "text-blue-500"); // Change the color when the password is visible
+    } else {
+        passwordInput.type = "password";
+        eyeIcon.classList.remove("text-blue-500");
+        eyeIcon.classList.add(
+            "text-gray-600"); // Change the color back when the password is hidden
+    }
+});
+</script>
+
 
 <?php view("partials/footer.php") ?>

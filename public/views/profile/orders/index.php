@@ -21,16 +21,14 @@ view("partials/header.php");
             </div>
         </div>
     </div>
-    <div class="flex flex-col max-w-[800px] w-full gap-5">
+    <div class="flex flex-col md:flex-row w-full gap-5 justify-center p-5">
         <?php view("profile/component/sidebar.php"); ?>
-        <hr />
-        <!-- order -->
+        
 
-        <?php
-
-        foreach ($orders as $order) {
-            
-            
+        <div class="flex flex-col gap-5">
+            <?php
+            foreach ($orders as $order) {
+        
             $item_div = '<div class="flex flex-col py-3 gap-4">';
 
             foreach($order["orderitems"] as $item){
@@ -50,8 +48,6 @@ view("partials/header.php");
                 }
 
                 $stars .= "</div>";
-
-              
 
                 $item_div .= '
                     <div class="flex px-4 gap-4">
@@ -87,6 +83,26 @@ view("partials/header.php");
 
             $payment_gcash = '<img src="/images/gcash.png" width="20" height="20" class="w-6 h-6" />';
 
+            $delivery_status = '<div class="flex p-5 ">
+                        <span class="font-bold px-4 py-3">Status: </span>
+                        <div class="flex flex-col gap-4 w-full">
+            ';
+
+    
+
+            foreach($order["long_status"] as $long_status){
+                $delivery_status .= ' <div class="px-4 py-3 rounded-md bg-neutral-300 text-sm min-w-full">
+                                            '. $long_status["status"] . '
+                                        
+                                        </div>
+                                    ';
+            }
+
+
+
+            $delivery_status .= '</div></div>';
+
+
             $order_div = '
                             <div class="flex flex-col p-4 border rounded-md shadow-md">
                                 <div class="flex border-b pb-2  justify-between items-center">
@@ -115,6 +131,8 @@ view("partials/header.php");
                                     
                                 </div>
                                 '.  $item_div .'
+                                '.  $delivery_status .'
+                             
                             </div>
                         ';
                         echo $order_div;
@@ -125,6 +143,7 @@ view("partials/header.php");
 
 
         ?>
+        </div>
 
 
     </div>

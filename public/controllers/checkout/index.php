@@ -14,10 +14,15 @@
         $cart["product"] = $product;
     }
 
+    $shipping_fee = $db->query('select * from defaults where key_name = "shipping_fee"')->find();
+    $installation_fee = $db->query('select * from defaults where key_name = "installation_fee"')->find();
+
     view("/checkout/index.php", [
         'title' => 'Checkout | Gym Builder Equipments',
         "carts" => $carts,
         "address" => $address,
         "errors" => $errors,
+        "installation_fee" => $installation_fee["value"],
+        "shipping_fee" => $shipping_fee["value"],
     ]);
 ?>

@@ -3,7 +3,6 @@
 use Core\App;
 use Core\Database;
 
-$title = "Create Tutorial | Admin Gym Builder";
 
 $db = App::resolve(Database::class);
 

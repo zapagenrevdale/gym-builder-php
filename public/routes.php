@@ -48,10 +48,18 @@
     // routes for ORDERS CRUD
     $router->get('/admin/orders', 'controllers/admin/orders/index.php')->only("admin");
     $router->patch('/admin/orders', 'controllers/admin/orders/update.php')->only("admin");
+    
+    // routes for SETTINGS
+    $router->get('/admin/settings', 'controllers/admin/settings/index.php')->only("admin");
+    $router->patch('/admin/settings', 'controllers/admin/settings/update.php')->only("admin");
+
 
     //routes for dashboard
     $router->get('/admin/dashboard', 'controllers/admin/dashboard.php')->only("admin");
     $router->get('/admin', 'controllers/admin/dashboard.php')->only("admin");
+
+    //routes for delivery status
+    $router->post('/admin/delivery_status', 'controllers/admin/delivery_status/store.php')->only("admin");
 
     //routes for session
     $router->get('/logout', 'controllers/session/destroy.php')->only("auth");

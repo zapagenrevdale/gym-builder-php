@@ -9,7 +9,7 @@
 
     <div class="p-12  ">
         <div class="flex flex-col items-center gap-6 justify-center pb-20">
-            <h1 class="text-5xl font-semibold text-center">Shopping Cart</h1>
+            <h1 class="text-5xl font-semibold text-center">Checkout</h1>
             <div class="flex items-center gap-2 justify-center mb-4">
                 <a href="">Home</a>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -17,7 +17,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                 </svg>
 
-                <a href="">Shopping Cart</a>
+                <a href="">Checkout</a>
             </div>
         </div>
 
@@ -31,35 +31,35 @@
                     <h4 class="w-32 ">Total</h4>
                 </div>
 
-                <?php
+                <?php $subtotal = 0; ?>
 
-                        $subtotal = 0;
+                <?php foreach($carts as $cart): ?>
 
-                        foreach($carts as $cart){
-                            $product = $cart["product"];
-                            $subtotal += $cart["quantity"] * $product["price"];
-                            echo    '
-                                        <div class="flex py-8 gap-6 border-b">
-                          
-                                            <div class="w-[300px] flex gap-4">
-                                                <img src="'. $product["image_link"] .'" class="w-20 h-20" />
-                                                <div class="flex flex-col gap-2">
-                                                    <h3 class="font-bold">
-                                                        Heavy Duty powercage
-                                                    </h3> 
-                                                    <p class="font-light"> ₱ ' . $product["price"] . '</p>
-                                                </div>
-                                            </div>
-                                            <div class="w-36 flex items-center">
-                                                x' . $cart["quantity"] .'
-                                            </div>
-                                            <p class="w-32 flex items-center" id="calculated_price_'. $cart["cart_id"] .'">
-                                                ₱ '.   $cart["quantity"] * $product["price"]  .'
-                                            </p>
-                                        </div>
-                                ';
-                                }
+                <?php   $product = $cart["product"];
+                        $subtotal += $cart["quantity"] * $product["price"];
                 ?>
+
+                <div class="flex py-8 gap-6 border-b">
+
+                    <div class="w-[300px] flex gap-4">
+                        <img src="<?= $product["image_link"] ?>" class="w-20 h-20" />
+                        <div class="flex flex-col gap-2">
+                            <h3 class="font-bold">
+                                <?= $product["name"] ?>
+                            </h3>
+                            <p class="font-light"> ₱ <?= $product["price"] ?></p>
+                        </div>
+                    </div>
+                    <div class="w-36 flex items-center">
+                        x<?=$cart["quantity"] ?>
+                    </div>
+                    <p class="w-32 flex items-center" id="calculated_price_<?= $cart["cart_id"] ?>">
+                        ₱ <?= $cart["quantity"] * $product["price"] ?>
+                    </p>
+                </div>
+
+                <?php endforeach; ?>
+
             </div>
 
             <div>
@@ -126,12 +126,16 @@
                         </div>
                         <div class="flex justify-between items-center">
                             <p>Shipping Fee</p>
-                            <p class="font-semibold">₱ 100</p>
+                            <p class="font-semibold">₱ <?= $shipping_fee ?></p>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <p>Installation Fee</p>
+                            <p class="font-semibold">₱ <?= $installation_fee ?></p>
                         </div>
                         <hr />
                         <div class="flex justify-between items-center">
-                            <p>Subtotal</p>
-                            <p class="font-semibold">₱ <?= $subtotal+100 ?></p>
+                            <p>Total</p>
+                            <p class="font-semibold">₱ <?= $subtotal+$shipping_fee+$installation_fee ?></p>
                         </div>
 
                         <button type="Submit"

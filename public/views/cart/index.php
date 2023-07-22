@@ -101,12 +101,16 @@
                 </div>
                 <div class="flex justify-between items-center">
                     <p>Shipping Fee</p>
-                    <p class="font-semibold">₱ 100</p>
+                    <p class="font-semibold">₱ <?= $shipping_fee ?></p>
+                </div>
+                <div class="flex justify-between items-center">
+                    <p>Installation Fee</p>
+                    <p class="font-semibold">₱ <?= $installation_fee ?></p>
                 </div>
                 <hr />
                 <div class="flex justify-between items-center">
                     <p>Subtotal</p>
-                    <p class="font-semibold">₱ <?= $subtotal+100 ?></p>
+                    <p class="font-semibold">₱ <?= $subtotal+$installation_fee+$shipping_fee ?></p>
                 </div>
 
                 <a href="/checkout"

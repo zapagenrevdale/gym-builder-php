@@ -15,6 +15,7 @@
                 class="w-full h-16  bg-neutral-100 text-center flex items-center justify-center text-xl font-grotesk font-black tracking-widest">
                 ORDERS
             </div>
+            <input type="text" name="_method" hidden value="patch" />
 
             <article class="px-16 py-10">
                 <table class="overflow-hidden table-fixed w-full">
@@ -37,7 +38,7 @@
                                         <td class="px-2 border-l">' . $order["user"]["first_name"] .' ' . $order["user"]["last_name"] .'</td>
                                         <td class="px-2 border-l">' . $order["total_amount"] .'</td>
                                         <td class="px-2 border-l">
-                                        <input type="text" name="_method" hidden value="patch" />
+                                       
                                         <input type="text" name="order_id[]" hidden value="' . $order["order_id"] .'" />
                                         <select class="h-10 border rounded-md focus:border px-1 w-full" name="payment_status[]">
                                             <option value="0" '. ($order["status"] == 0? "selected": "") . '>

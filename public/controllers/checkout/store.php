@@ -13,6 +13,8 @@ $config = require base_path('config.php');
 $user = $db->query('select * from users where email = ? ', [$_SESSION["user"]["email"]] )->findOrFail();
 $carts = $db->query('select * from cart where user_id = ?', [$user["user_id"]])->get();
 $address = $db->query('select * from addresses where user_id = ? ORDER BY address_id DESC', [$user["user_id"]] )->find();
+$shipping_fee = $db->query('select * from defaults where key_name = "shipping_fee"')->find();
+$installation_fee = $db->query('select * from defaults where key_name = "installation_fee"')->find();
 
 if(!$address){
     foreach($carts as &$cart){
@@ -24,6 +26,8 @@ if(!$address){
         "carts" => $carts,
         "address" => $address,
         "errors" => ["address" => "Address is missing. Please Update!"],
+        "installation_fee" => $installation_fee["value"],
+        "shipping_fee" => $shipping_fee["value"],
     ]);
     exit();
 }

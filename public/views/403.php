@@ -5,7 +5,7 @@
     view("partials/header.php");
 ?>
 
-<div class="flex flex-col justify-center items-center h-screen">
+<div class="flex flex-col justify-center items-center h-screen text-center p-2">
         <h1 class="text-5xl font-grotesk mb-12">
             ERROR 403
         </h1>

@@ -42,6 +42,8 @@ if($user["verified"] == 0){
         "carts" => $carts,
         "address" => $address,
         "errors" => ["email" => "Email should be verified first!"],
+        "installation_fee" => $installation_fee["value"],
+        "shipping_fee" => $shipping_fee["value"],
     ]);
     exit();
 }

@@ -127,3 +127,12 @@ CREATE TABLE emailotp (
   otp VARCHAR(10) NOT NULL,
   expiration_time DATETIME NOT NULL
 );
+
+
+CREATE TABLE password_reset_tokens (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    token VARCHAR(100) NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    expires_at DATETIME NOT NULL
+);

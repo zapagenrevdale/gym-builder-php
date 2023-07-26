@@ -100,4 +100,12 @@
     $router->get('/email-verification', 'controllers/email-verification/create.php')->only("user");
     $router->post('/email-verification', 'controllers/email-verification/store.php')->only("user");
     $router->get('/email-verification/send-verification', 'controllers/email-verification/sendmail.php')->only("user");
+
+
+    $router->get('/forgot-password', 'controllers/reset/create.php')->only("guest");
+    $router->post('/forgot-password', 'controllers/reset/store.php')->only("guest");
+
+    $router->get('/reset-password', 'controllers/reset/edit.php')->only("guest");
+    $router->patch('/reset-password', 'controllers/reset/update.php')->only("guest");
+
 ?>

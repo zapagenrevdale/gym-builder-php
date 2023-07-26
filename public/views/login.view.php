@@ -42,7 +42,7 @@
         <?= isset($errors["password"]) ? '<p class="text-red-700 text-sm">'. $errors["password"] .'</p>' : '' ?>
     </div>
 
-    <a href="#" class="font-light">
+    <a href="/forgot-password" class="font-light">
         Forgot your password?
     </a>
 

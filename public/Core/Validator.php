@@ -16,7 +16,7 @@
         }
 
         public static function validateFilePresence($value) {
-            return $value !== null && !empty($value["name"]) && !empty($value["full_path"]);
+            return $value !== null && !empty($value["name"]);
         }
 
         public static function validateFile($value, $allowedFormats) {
@@ -25,14 +25,14 @@
             }
 
             $finfo = finfo_open(FILEINFO_MIME_TYPE);
-            $mimeType = finfo_file($finfo, $value['tmp_name']);
+            $mimeType = finfo_file($finfo, $value['type']);
             finfo_close($finfo);
 
             return in_array($mimeType, $allowedFormats);
         }
 
         public static function image($value){
-            $allowedFormats = ['image/jpg', 'image/jpeg', 'image/png', 'image/gif'];
+            $allowedFormats = ['image/jpg', 'image/jpeg', 'image/png', 'image/gif', "jpg", "jpeg", "png", "gif"];
 
             return self::validateFile($value, $allowedFormats);
         }

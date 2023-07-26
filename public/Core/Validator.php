@@ -24,11 +24,7 @@
                 return false;
             }
 
-            $finfo = finfo_open(FILEINFO_MIME_TYPE);
-            $mimeType = finfo_file($finfo, $value['type']);
-            finfo_close($finfo);
-
-            return in_array($mimeType, $allowedFormats);
+            return in_array($value['type'], $allowedFormats);
         }
 
         public static function image($value){

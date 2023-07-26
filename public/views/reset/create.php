@@ -26,9 +26,11 @@
                 value="<?= $_POST['email'] ?? "" ?>" />
         </div>
         <div class="flex justify-end w-full">
-            <input
+            <button id="submitButton"
                 class="font-semibold text-center primary-button hover:hover-button-black primary-button-black flex items-center justify-center rounded-md font-grotesk cursor-pointer"
-                type="Submit" value="Reset Password" />
+                type="submit">
+                Reset Password
+            </button>
         </div>
 
         <?= isset($errors["email"]) ? '<p class="text-red-700 text-sm font-bold">'. $errors["email"] .'</p>' : '' ?>
@@ -36,5 +38,4 @@
     </form>
 
 </div>
-
 <?php view("partials/footer.php"); ?>

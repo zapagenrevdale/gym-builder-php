@@ -22,7 +22,7 @@ class Mailer
 
         try {
             //Server settings
-            $this->mail->SMTPDebug = SMTP::DEBUG_SERVER; //Enable verbose debug output
+            $this->mail->SMTPDebug = 0; //Enable verbose debug output
             $this->mail->isSMTP(); //Send using SMTP
             $this->mail->SMTPAuth = $mailconfig['auth'] ? true : false;
             $this->mail->SMTPAutoTLS = $mailconfig['tls'] ? true : false;

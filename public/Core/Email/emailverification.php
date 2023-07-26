@@ -21,6 +21,7 @@ class EmailVerification
     public function sendEmailVerification($user, $otp)
     {
         $mailer = new Mailer($this->emailconfig);
+        
 
         $content = new Content(); // Model\Email\Content
         $content->subject = $this->emailconfig['emailverificationSubject'];

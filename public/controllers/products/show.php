@@ -7,6 +7,10 @@
         abort(404);
     }
 
+    if(isset($_SESSION['admin'])){
+        abort(403);
+    }
+
     $db = App::resolve(Database::class);
     
     $_SESSION['previous_route'] = $_SERVER['REQUEST_URI'];

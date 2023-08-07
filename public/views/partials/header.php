@@ -38,6 +38,7 @@ if(isset($_SESSION["user"])){
         </div>
         <div id="navigation" class="hidden w-full flex items-center gap-4 p-4">
             <div class="flex flex-col gap-4 px-10 w-full">
+                <?php if(isset($_SESSION["admin"])): ?>
                 <a href="/#shop"
                     class="md:hidden cursor-pointer hover:underline flex items-center gap-5 underline-offset-4 hover:bg-neutral-800 hover:text-white min-w-full p-2 rounded-md"
                     title="Shop">
@@ -48,6 +49,9 @@ if(isset($_SESSION["user"])){
                     </svg>
                     Shop
                 </a>
+
+                <?php endif; ?>
+
                 <a href="/about"
                     class="md:hidden cursor-pointer hover:underline flex items-center gap-5 underline-offset-4 hover:bg-neutral-800 hover:text-white min-w-full p-2 rounded-md"
                     title="About">
@@ -121,7 +125,9 @@ if(isset($_SESSION["user"])){
                 <span class="font-light">Gym<span class="font-extrabold">Builder</span></span>
             </a>
             <nav class="hidden md:flex items-center justify-center space-x-8 underline-offset-4">
+                <?php if(!isset($_SESSION["admin"])): ?>
                 <a href="/#shop" class="font-medium text-lg font-grotesk hover:underline cursor-pointer"> Shop </a>
+                <?php endif; ?>
                 <a href="/about" class="font-medium text-lg font-grotesk hover:underline cursor-pointer"> About </a>
                 <a href="/contact" class="font-medium text-lg font-grotesk hover:underline cursor-pointer"> Contact </a>
                 <?= (isset($_SESSION["admin"]) ? '<a href="/admin/products" class="font-medium text-lg font-grotesk hover:underline cursor-pointer"> Admin </a>': "") ?>

@@ -6,7 +6,6 @@
                 <span class="font-light">Gym<span class="font-extrabold">Builder</span></span>
             </button>
             <nav class="hidden lg:flex  items-center justify-center space-x-8 underline-offset-4">
-                <a href="/#shop" class="font-medium text-lg font-grotesk hover:underline cursor-pointer"> Shop </a>
                 <a href="/about" class="font-medium text-lg font-grotesk hover:underline cursor-pointer"> About </a>
                 <a href="/contact" class="font-medium text-lg font-grotesk hover:underline cursor-pointer"> Contact </a>
                 <a href="/admin/products" class="font-medium text-lg font-grotesk hover:underline cursor-pointer"> Admin

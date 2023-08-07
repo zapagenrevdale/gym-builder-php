@@ -5,7 +5,7 @@
             <p class="text-neutral-300 text-center xl:text-left">Discover our top-tier gear designed to help you reach your fitness
                 goals.</p>
             <div class="flex gap-4 items-center justify-center xl:justify-start">
-                <p class="font-bold text-xl text-blue-500">facebook:</p>
+                <a href="https://www.facebook.com/TheGymBuilder" target="_blank" class="font-bold text-xl text-blue-500">facebook</a>
                 <a href="https://www.facebook.com/TheGymBuilder" target="_blank"
                     class="underline underline-offset-4 text-lg">
                     TheGymBuilder

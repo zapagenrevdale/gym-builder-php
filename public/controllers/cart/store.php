@@ -44,6 +44,6 @@ if($cart_item){
 }
 
 
-header('location: /cart');
+header('location: /#shop');
 exit;
 ?>

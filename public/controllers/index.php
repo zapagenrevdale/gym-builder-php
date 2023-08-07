@@ -3,6 +3,10 @@
     use Core\App;
     $db = App::resolve(Database::class);
 
+    if(isset($_SESSION['admin'])){
+        abort(403);
+    }
+
     $products = $db->query('select * from products')->get();
 
     foreach($products as &$product){

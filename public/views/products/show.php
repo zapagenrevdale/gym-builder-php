@@ -151,13 +151,14 @@
         <div class="flex text-start font-semibold text-2xl">
             Watch our Tutorial here. . .
         </div>
-        <video src="<?= $tutorial["video_link"] ?>" controls class="rounded-md shadow-md">
-
-        </video>
+        <div class="max-w-[500px] w-full">
+            <video src="<?= $tutorial["video_link"] ?>" controls class="rounded-md shadow-md">
+            </video>
+        </div>
         <h1 class="text-3xl font-bold uppercase">
             <?= $tutorial["title"] ?>
         </h1>
-        <p class="font-light text-justify text-lg">
+        <p class="text-justify text-xl p-3 bg-neutral-100 rounded-md">
             <?= $tutorial["content"] ?>
         </p>
 

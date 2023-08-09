@@ -108,4 +108,7 @@
     $router->get('/reset-password', 'controllers/reset/edit.php')->only("guest");
     $router->patch('/reset-password', 'controllers/reset/update.php')->only("guest");
 
+    $router->get('/faq', 'controllers/faq.php');
+
+
 ?>
